@@ -1,0 +1,7 @@
+# Francisco De Carvalho Pereira — portfolio
+# PH-01: replace YOUR_SITE_URL with your real URL, then re-run this file's
+# one-line replace documented in README.md.
+User-agent: *
+Allow: /
+
+Sitemap: YOUR_SITE_URL/sitemap.xml

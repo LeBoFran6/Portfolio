@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>YOUR_SITE_URL/</loc></url>
+  <url><loc>YOUR_SITE_URL/work.html</loc></url>
+  <url><loc>YOUR_SITE_URL/breakdown.html</loc></url>
+  <url><loc>YOUR_SITE_URL/about.html</loc></url>
+  <url><loc>YOUR_SITE_URL/skills.html</loc></url>
+  <url><loc>YOUR_SITE_URL/contact.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/lets-sing-voxler.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/automated-blender-render-pipeline.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/fittingbox.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/warno.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/rubber.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/rally-project.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/lastmeal.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/movies-cgi.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/environment-art.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/dietemna.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/architectural-visualisation.html</loc></url>
+  <url><loc>YOUR_SITE_URL/projects/game-jams.html</loc></url>
+</urlset>

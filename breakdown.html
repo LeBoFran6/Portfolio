@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira</title>
+<meta name="description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
+<meta name="author" content="Francisco De Carvalho Pereira">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="YOUR_SITE_URL/breakdown.html">
+
+<!-- PH-01 is the only value you must set before publishing; see README.md -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Francisco De Carvalho Pereira">
+<meta property="og:title" content="R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira">
+<meta property="og:description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
+<meta property="og:url" content="YOUR_SITE_URL/breakdown.html">
+<!-- PLACEHOLDER PH-OG | Open Graph share card | ideal: 1.91:1, 1200x630, jpg, <200 KB, must not be the hero still | file: assets/img/og/og-cover-1200x630.jpg -->
+<meta property="og:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist / Technical Director">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira">
+<meta name="twitter:description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
+<meta name="twitter:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist / Technical Director","url":"YOUR_SITE_URL/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="index.html" aria-label="Francisco De Carvalho Pereira &mdash; home">
+      <span class="brand__mark" aria-hidden="true">FD</span>
+      <span class="brand__txt">
+        <span>Francisco De Carvalho Pereira</span>
+        <span>Technical Artist / TD</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      <a class="btn btn--primary btn--sm" href="contact.html">Get in touch</a>
+    </nav>
+    <details class="mobile-nav" data-mobile-nav>
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <div class="mobile-nav__panel">
+        <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+        <div class="mobile-nav__foot">
+          <a class="btn btn--primary" href="contact.html">Contact</a>
+          <span class="tag">PH-08</span><span class="muted" style="font-size:var(--t-xs)">CV PDF</span>
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+<section class="cs-hero">
+    <div class="wrap">
+      <span class="label label--accent">R&amp;D / Breakdown</span>
+      <h1>The technical work, <span class="grad">opened up</span>.</h1>
+      <p class="lede">Case studies explain what shipped. This is where the systems live:
+      the render-target instrumentation, the deterministic material pipeline, the vehicle
+      dynamics, the budgets. Each card states the problem, the method, the measured
+      result and what I would change.</p>
+      <div class="cs-hero__chips">
+        <span class="chip">Unreal Engine 5</span>
+        <span class="chip">Unity</span>
+        <span class="chip">Blender &middot; Python</span>
+        <span class="chip">C#</span>
+        <span class="chip">World Machine</span>
+        <span class="chip">Render targets</span>
+        <span class="chip">Profiling</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="callout mb-6">
+        <span class="callout__k">PH-RD-*</span>
+        <p>Thirteen R&amp;D cards below are written and structured, but <strong>every one
+        needs its proof visual</strong> (node graph, profiler capture, tool UI, before/after).
+        A technical director believes a screenshot of a graph and a frame-time readout far
+        more than any adjective. The card marked <em>optional</em> is the Houdini slot &mdash;
+        delete it if it does not apply.</p>
+      </div>
+      <div class="rd-grid"><article class="rd reveal" id="rd-scene-capture">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Multi-view instrumentation with Scene Capture 2D</h3>
+        <span class="rd__tools">Unreal Engine 5 · Scene Capture 2D · render targets · UI compositing</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>A client wanted several live camera angles on screen at once. Every extra active camera is another full render pass: culling, shadows, post-process.</dd></div>
+          <div><dt>What I did</dt><dd>Rebuilt the system around Scene Capture 2D components writing to render targets, composited in UI. Decoupled capture cadence from game framerate, trimmed show flags (no shadows / post / fog), and matched capture resolution to actual on-screen size.</dd></div>
+          <div><dt>Result</dt><dd>~13 ms frame time with every view live, inside a 16.6 ms / 60 fps budget, 12 ms of it on the render thread.</dd></div>
+          <div><dt>Next</dt><dd>Instanced static meshes and merged materials on the secondary captures would cut draw call submission further.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-01 | Multi-view instrumentation with Scene Capture 2D — proof visual | ideal: 16:9, 1920x1080, PNG <=400 KB (keep graph text lossless) | file: assets/img/breakdown/scene-capture-frame-time-1920x1080.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-01: Multi-view instrumentation with Scene Capture 2D — proof visual">
+      <span class="ph__id">PH-RD-01</span>
+      <span class="ph__label">Multi-view instrumentation with Scene Capture 2D — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, PNG &lt;=400 KB (keep graph text lossless)</span>
+      <span class="ph__file">assets/img/breakdown/scene-capture-frame-time-1920x1080.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/rally-project.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-deterministic-materials">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Deterministic material regeneration</h3>
+        <span class="rd__tools">Blender · Python (bpy) · shader node graphs</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>The first version patched hand-built shaders by writing hardcoded values into them. It worked until it silently did not: too fragile and unpredictable to trust.</dd></div>
+          <div><dt>What I did</dt><dd>Stopped patching and started regenerating. Every batch rebuilds the material graph from zero, so the shader graph is a build artefact rather than a hand-maintained file.</dd></div>
+          <div><dt>Result</dt><dd>Same input, same output, every run. Deterministic by design, which is the difference between a script that works on your machine and a tool a studio can rely on.</dd></div>
+          <div><dt>Next</dt><dd>A node-graph golden-image test per material would catch regressions automatically.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-02 | Deterministic material regeneration — proof visual | ideal: 16:9, 2560x1440, PNG <=600 KB, node labels must be legible | file: assets/img/breakdown/material-regeneration-node-graph-2560x1440.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-02: Deterministic material regeneration — proof visual">
+      <span class="ph__id">PH-RD-02</span>
+      <span class="ph__label">Deterministic material regeneration — proof visual</span>
+      <span class="ph__spec">16:9, 2560x1440, PNG &lt;=600 KB, node labels must be legible</span>
+      <span class="ph__file">assets/img/breakdown/material-regeneration-node-graph-2560x1440.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-headless-blender">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Headless Blender automation as an artist tool</h3>
+        <span class="rd__tools">Blender · Python (bpy) · Windows .bat · Alembic · Unity export</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Every new skin and model was imported into Blender by hand, materials reassigned, then re-rendered: half a day of work, twice a week, and more when the team shipped a lot.</dd></div>
+          <div><dt>What I did</dt><dd>A self-contained automation pipeline behind one .bat: IMPORT_ABC -&gt; ASSIGN_MATERIAL -&gt; IMPORT_TEXTURES -&gt; RENDER (stills + sequence) -&gt; shared folder. Runs on any networked PC with Blender installed. No licensing, no server, no build step.</dd></div>
+          <div><dt>Result</dt><dd>Half a day per batch became one double-click. Roughly 2 days a week returned to the team, in continuous production use for seven months, run by the artists without an engineer.</dd></div>
+          <div><dt>Next</dt><dd>A queue with per-machine locking would let several artists batch at once without colliding.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-03 | Headless Blender automation as an artist tool — proof visual | ideal: 16:9, 1920x1080, PNG or webp <=300 KB | file: assets/img/breakdown/headless-blender-pipeline-1920x1080.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-03: Headless Blender automation as an artist tool — proof visual">
+      <span class="ph__id">PH-RD-03</span>
+      <span class="ph__label">Headless Blender automation as an artist tool — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, PNG or webp &lt;=300 KB</span>
+      <span class="ph__file">assets/img/breakdown/headless-blender-pipeline-1920x1080.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-animation-validation">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Animation validation tool for animators</h3>
+        <span class="rd__tools">Unity · C# (editor + runtime) · animation retargeting</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Scale and transform errors in animation were invisible in the DCC and only surfaced after a developer round-trip, which put the fix days away from the person who could make it.</dd></div>
+          <div><dt>What I did</dt><dd>Animators drop clips into a folder, open a scene, and one click applies the animation to a test rig. Deliberately built to fit the animation team's existing workflow rather than forcing a change to it.</dd></div>
+          <div><dt>Result</dt><dd>Errors that previously surfaced after a developer round-trip are caught by the animator in seconds, on their own machine.</dd></div>
+          <div><dt>Next</dt><dd>A batch mode over a whole folder would turn it from a spot check into a gate.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-04 | Animation validation tool for animators — proof visual | ideal: 16:9, 1920x1080, PNG <=300 KB | file: assets/img/breakdown/unity-animation-validation-tool-1920x1080.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-04: Animation validation tool for animators — proof visual">
+      <span class="ph__id">PH-RD-04</span>
+      <span class="ph__label">Animation validation tool for animators — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, PNG &lt;=300 KB</span>
+      <span class="ph__file">assets/img/breakdown/unity-animation-validation-tool-1920x1080.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-chaos-vehicle">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Six-wheel vehicle dynamics on Chaos Vehicle</h3>
+        <span class="rd__tools">Unreal Engine 5 · Chaos Vehicle · Blender (rig) · 3ds Max</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>An arcade racer lives or dies on how the car feels, and the target was specific: heavy but fast, chaotic yet responsive. Six-wheel drive is a configuration the engine defaults do not cover, and the city was in constant redesign underneath the vehicle.</dd></div>
+          <div><dt>What I did</dt><dd>A complete dynamics model: mass distribution, torque curves, wheel friction, cornering stiffness and suspension spring rates, iterated against playtest feedback. Plus a custom 6-wheel rig in Blender for accurate per-wheel ground response, integrated into the engine's physics pipeline.</dd></div>
+          <div><dt>Result</dt><dd>Handling read correctly at speed and held its identity across repeated map redesigns rather than being re-derived each time.</dd></div>
+          <div><dt>Next</dt><dd>Telemetry-driven tuning passes instead of playtest-only iteration.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-05 | Six-wheel vehicle dynamics on Chaos Vehicle — proof visual | ideal: 16:9, 1920x1080, webp <=350 KB; viewport captures at 100% zoom | file: assets/img/breakdown/chaos-vehicle-six-wheel-rig-1920x1080.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-05: Six-wheel vehicle dynamics on Chaos Vehicle — proof visual">
+      <span class="ph__id">PH-RD-05</span>
+      <span class="ph__label">Six-wheel vehicle dynamics on Chaos Vehicle — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;=350 KB; viewport captures at 100% zoom</span>
+      <span class="ph__file">assets/img/breakdown/chaos-vehicle-six-wheel-rig-1920x1080.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-destruction">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Modular destruction without physics debris</h3>
+        <span class="rd__tools">3ds Max · Morpher modifier · Unreal Engine 5</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Crash response had to read as real damage without the cost of a full physics-simulated debris system.</dd></div>
+          <div><dt>What I did</dt><dd>3ds Max Morpher driving authored part separation: bumper, hood and lights detach along authored morph targets driven by impact data.</dd></div>
+          <div><dt>Result</dt><dd>Damage reads at gameplay speed while staying inside the vehicle's frame budget.</dd></div>
+          <div><dt>Next</dt><dd>Damage state could drive material wear as well as geometry, in one pass.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-06 | Modular destruction without physics debris — proof visual | ideal: 16:9, 1920x1080, webp <=350 KB; a 3-6 s mp4 loop is the strongest form | file: assets/img/breakdown/morpher-destruction-1920x1080.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-06: Modular destruction without physics debris — proof visual">
+      <span class="ph__id">PH-RD-06</span>
+      <span class="ph__label">Modular destruction without physics debris — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;=350 KB; a 3-6 s mp4 loop is the strongest form</span>
+      <span class="ph__file">assets/img/breakdown/morpher-destruction-1920x1080.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-world-machine">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Procedural terrain: World Machine into engine</h3>
+        <span class="rd__tools">World Machine · Unreal Engine 5 · Megascans</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Getting a landscape that reads as a real place at scale, without hand-sculpting every metre of it.</dd></div>
+          <div><dt>What I did</dt><dd>World Machine as the backbone, built by iteration: base shape, blended and extended into another, then one detail layer at a time (distortion, wind, waves) until it held up. Implemented as a landscape in engine and dressed with desert assets.</dd></div>
+          <div><dt>Result</dt><dd>Every step of the creation is traceable from raw heightfield to finished environment, and the method carried back into production work.</dd></div>
+          <div><dt>Next</dt><dd>A parameterised macro so a variant terrain is a slider change, not a re-author.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-07 | Procedural terrain: World Machine into engine — proof visual | ideal: 16:9, 1920x1080, PNG for the node graph (text legibility), webp for renders | file: assets/img/breakdown/world-machine-node-graph-1920x1080.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-07: Procedural terrain: World Machine into engine — proof visual">
+      <span class="ph__id">PH-RD-07</span>
+      <span class="ph__label">Procedural terrain: World Machine into engine — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, PNG for the node graph (text legibility), webp for renders</span>
+      <span class="ph__file">assets/img/breakdown/world-machine-node-graph-1920x1080.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/environment-art.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-draw-calls">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Draw call reduction across six console targets</h3>
+        <span class="rd__tools">Unity · C# · LOD strategy · batching · profiling</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
+          <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
+          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set.</dd></div>
+          <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-08 | Draw call reduction across six console targets — proof visual | ideal: 16:9, 1920x1080, PNG for profiler captures <=400 KB | file: assets/img/breakdown/draw-call-profiler-1920x1080.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-08: Draw call reduction across six console targets — proof visual">
+      <span class="ph__id">PH-RD-08</span>
+      <span class="ph__label">Draw call reduction across six console targets — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, PNG for profiler captures &lt;=400 KB</span>
+      <span class="ph__file">assets/img/breakdown/draw-call-profiler-1920x1080.png</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-ps1-budget">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Designing to 2 MB of RAM and 1 MB of VRAM</h3>
+        <span class="rd__tools">Unity · SplashEdit · PSXSplash · Lua · original PS1 hardware</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>A fishing game on real 1994 hardware: 33 MHz, 2 MB system RAM, 1 MB VRAM. The toolchain compiles, packs VRAM and builds the disc image. What no toolchain decides for you is what fits.</dd></div>
+          <div><dt>What I did</dt><dd>Budgeted every scene to the hardware up front, choosing what each scene could afford rather than optimising after the fact, and treated the constraints as design input.</dd></div>
+          <div><dt>Result</dt><dd>A stable 40 fps on original hardware, shipped as a genuine PS1-compatible disc image.</dd></div>
+          <div><dt>Next</dt><dd>A per-scene VRAM ledger checked into the repo so the budget is visible before art lands.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-09 | Designing to 2 MB of RAM and 1 MB of VRAM — proof visual | ideal: 4:3, 640x480 native upscaled to 1280x960, webp <=250 KB | file: assets/img/breakdown/ps1-vram-budget-1280x960.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-09: Designing to 2 MB of RAM and 1 MB of VRAM — proof visual">
+      <span class="ph__id">PH-RD-09</span>
+      <span class="ph__label">Designing to 2 MB of RAM and 1 MB of VRAM — proof visual</span>
+      <span class="ph__spec">4:3, 640x480 native upscaled to 1280x960, webp &lt;=250 KB</span>
+      <span class="ph__file">assets/img/breakdown/ps1-vram-budget-1280x960.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/lastmeal.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-gaze">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Runtime gaze decoupled from baked animation</h3>
+        <span class="rd__tools">Unity · C# · animation systems</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Characters had to react live to on-screen events while still playing authored performance animation, which baked eye and pupil work cannot do.</dd></div>
+          <div><dt>What I did</dt><dd>Separated eye and pupil control from the baked animation layer so the gaze is driven at runtime while the authored performance plays underneath.</dd></div>
+          <div><dt>Result</dt><dd>Live reactions without re-authoring a single performance clip.</dd></div>
+          <div><dt>Next</dt><dd>Blink and saccade timing driven by the same runtime layer for more life.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-10 | Runtime gaze decoupled from baked animation — proof visual | ideal: 16:9, 1920x1080, webp <=300 KB, tight crop on the face | file: assets/img/breakdown/runtime-gaze-system-1920x1080.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-10: Runtime gaze decoupled from baked animation — proof visual">
+      <span class="ph__id">PH-RD-10</span>
+      <span class="ph__label">Runtime gaze decoupled from baked animation — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;=300 KB, tight crop on the face</span>
+      <span class="ph__file">assets/img/breakdown/runtime-gaze-system-1920x1080.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-world-streaming">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Large-scale world streaming on a proprietary engine</h3>
+        <span class="rd__tools">Eugen Systems in-house engine · World Machine · modular kits</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Maps are built to real-world scale and must read like satellite imagery while streaming continuously, holding up from a whole city block down to a single street.</dd></div>
+          <div><dt>What I did</dt><dd>Owned a complete production map end to end: layout, terrain, environment data, final optimisation. Assembled and maintained four modular environment kits, each covering a distinct region and enforcing consistent real-world scale across the whole map.</dd></div>
+          <div><dt>Result</dt><dd>Map weight reduced and visual problems from large-scale QA pass fixed, while the world keeps loading around the player.</dd></div>
+          <div><dt>Next</dt><dd>Streaming cost visualised per sector would make the trade-offs reviewable with design.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-11 | Large-scale world streaming on a proprietary engine — proof visual | ideal: 16:9, 2560x1440, webp <=400 KB | file: assets/img/breakdown/world-streaming-sectors-2560x1440.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-11: Large-scale world streaming on a proprietary engine — proof visual">
+      <span class="ph__id">PH-RD-11</span>
+      <span class="ph__label">Large-scale world streaming on a proprietary engine — proof visual</span>
+      <span class="ph__spec">16:9, 2560x1440, webp &lt;=400 KB</span>
+      <span class="ph__file">assets/img/breakdown/world-streaming-sectors-2560x1440.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/warno.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-cad-repair">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Making unusable CAD deliverable</h3>
+        <span class="rd__tools">ArchiCAD export · Blender · Unreal Engine 5 · Lumen · Megascans</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>The practice supplied the house as an ArchiCAD export with plans, site photographs and sun data. The export was unusable as delivered: broken geometry, no clean topology, no UVs, no materials.</dd></div>
+          <div><dt>What I did</dt><dd>Rebuilt it in Blender: retopologised, unwrapped, assigned materials, then brought it into Unreal Engine 5. Built the surrounding environment from the site photographs and set lighting from the practice's sun data.</dd></div>
+          <div><dt>Result</dt><dd>Delivered as three still renders. The building permit was filed with these images and granted.</dd></div>
+          <div><dt>Next</dt><dd>A repeatable CAD-cleanup checklist would shorten the rebuild on the next commission.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-12 | Making unusable CAD deliverable — proof visual | ideal: 16:9, 1920x1080, webp <=300 KB | file: assets/img/breakdown/cad-repair-before-after-1920x1080.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-12: Making unusable CAD deliverable — proof visual">
+      <span class="ph__id">PH-RD-12</span>
+      <span class="ph__label">Making unusable CAD deliverable — proof visual</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;=300 KB</span>
+      <span class="ph__file">assets/img/breakdown/cad-repair-before-after-1920x1080.webp</span>
+    </div>
+    
+      <p><a class="btn btn--sm" href="projects/architectural-visualisation.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-houdini">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>(Optional slot) Houdini / procedural tooling</h3>
+        <span class="rd__tools">Houdini — only if you use it</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>No Houdini work appears anywhere on your current site, so no entry was invented for it.</dd></div>
+          <div><dt>What I did</dt><dd>If Houdini is part of your practice, drop a card here: the problem, the Houdini network you built, and what it removed from the manual loop.</dd></div>
+          <div><dt>Result</dt><dd>Delete this card if it does not apply. An empty claim is worse than a missing one.</dd></div>
+          <div><dt>Next</dt><dd>A screenshot of the network plus one asset it generated is enough to be credible.</dd></div>
+        </dl>
+      </div>
+      
+<!-- PLACEHOLDER PH-RD-13 | (Optional slot) Houdini / procedural tooling — proof visual | ideal: 16:9, 2560x1440, PNG <=600 KB | file: assets/img/breakdown/houdini-network-2560x1440.png -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-13: (Optional slot) Houdini / procedural tooling — proof visual">
+      <span class="ph__id">PH-RD-13</span>
+      <span class="ph__label">(Optional slot) Houdini / procedural tooling — proof visual</span>
+      <span class="ph__spec">16:9, 2560x1440, PNG &lt;=600 KB</span>
+      <span class="ph__file">assets/img/breakdown/houdini-network-2560x1440.png</span>
+    </div>
+    
+      
+    </article>
+</div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h2 class="footer__h">Francisco De Carvalho Pereira</h2>
+        <p class="muted" style="font-size:var(--t-sm);max-width:34ch">
+          Technical Artist / Technical Director. Real-time 3D, pipeline automation
+          and performance. Marseille, France.
+        </p>
+        <p class="mt-4">
+          <a class="btn btn--primary btn--sm" href="contact.html">Start a conversation</a>
+        </p>
+      </div>
+      <div>
+        <h2 class="footer__h">Index</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="breakdown.html">R&amp;D / Breakdown</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Elsewhere &mdash; to supply</h2>
+        <!-- Placeholders are plain text on purpose: a link to a file or profile
+             that does not exist yet would be a broken link. README.md has the
+             drop-in markup for each one. -->
+        <ul class="footer__list">
+          <li><span class="tag">PH-08</span> CV &mdash; <span class="dim">assets/files/cv-francisco-de-carvalho-pereira.pdf</span></li>
+          <li><span class="tag">PH-03</span> LinkedIn</li>
+          <li><span class="tag">PH-04</span> GitHub</li>
+          <li><span class="tag">PH-05</span> ArtStation</li>
+          <li><span class="tag">PH-06</span> itch.io</li>
+          <li><span class="tag">PH-02</span> <span class="dim">YOUR_EMAIL</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; <span data-year>2026</span> Francisco De Carvalho Pereira</span>
+      <span>Hand-built static HTML &middot; no trackers &middot; no CDN</span>
+      <span>Available for Technical Artist / Technical Director roles</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

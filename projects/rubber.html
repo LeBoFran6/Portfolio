@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUBBER — Technical Direction — Vehicle Systems | Francisco De Carvalho Pereira</title>
+<meta name="description" content="RUBBER — Technical Direction — Vehicle Systems. Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<meta name="author" content="Francisco De Carvalho Pereira">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="YOUR_SITE_URL/projects/rubber.html">
+
+<!-- PH-01 is the only value you must set before publishing; see README.md -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Francisco De Carvalho Pereira">
+<meta property="og:title" content="RUBBER — Technical Direction — Vehicle Systems | Francisco De Carvalho Pereira">
+<meta property="og:description" content="RUBBER — Technical Direction — Vehicle Systems. Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<meta property="og:url" content="YOUR_SITE_URL/projects/rubber.html">
+<!-- PLACEHOLDER PH-OG | Open Graph share card | ideal: 1.91:1, 1200x630, jpg, <200 KB, must not be the hero still | file: assets/img/og/og-cover-1200x630.jpg -->
+<meta property="og:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist / Technical Director">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RUBBER — Technical Direction — Vehicle Systems | Francisco De Carvalho Pereira">
+<meta name="twitter:description" content="RUBBER — Technical Direction — Vehicle Systems. Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<meta name="twitter:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/site.css">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist / Technical Director","url":"YOUR_SITE_URL/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="../index.html" aria-label="Francisco De Carvalho Pereira &mdash; home">
+      <span class="brand__mark" aria-hidden="true">FD</span>
+      <span class="brand__txt">
+        <span>Francisco De Carvalho Pereira</span>
+        <span>Technical Artist / TD</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../work.html" aria-current="true">Work</a><a href="../breakdown.html">R&D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
+      <a class="btn btn--primary btn--sm" href="../contact.html">Get in touch</a>
+    </nav>
+    <details class="mobile-nav" data-mobile-nav>
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <div class="mobile-nav__panel">
+        <a href="../index.html">Home</a><a href="../work.html" aria-current="true">Work</a><a href="../breakdown.html">R&D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
+        <div class="mobile-nav__foot">
+          <a class="btn btn--primary" href="../contact.html">Contact</a>
+          <span class="tag">PH-08</span><span class="muted" style="font-size:var(--t-xs)">CV PDF</span>
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+<section class="cs-hero">
+    <div class="wrap">
+      <span class="label label--accent">TECHREFT Studio</span>
+      <h1>RUBBER</h1>
+      <p class="lede">Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.</p>
+      <div class="cs-hero__chips"><span class="chip chip--accent">TECHREFT Studio</span><span class="chip chip--accent">10/2022 – 06/2023</span><span class="chip chip--accent">personal</span><span class="chip chip--accent">engine</span><span class="chip chip--accent">tools</span></div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <figure>
+        
+<!-- PLACEHOLDER PH-P-rubber | RUBBER — hero visual | ideal: 16:9, 1920x1080, webp <350 KB; rig viewport capture at 100% zoom | file: assets/img/projects/rubber-hero-1920x1080.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-P-rubber: RUBBER — hero visual">
+      <span class="ph__id">PH-P-rubber</span>
+      <span class="ph__label">RUBBER — hero visual</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;350 KB; rig viewport capture at 100% zoom</span>
+      <span class="ph__file">assets/img/projects/rubber-hero-1920x1080.webp</span>
+    </div>
+    
+        <figcaption>RUBBER &mdash; hero visual (PH-P-rubber). 10-16 stills: final car, 6-wheel rig, Morpher destruction sequence, Chaos Vehicle setup</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="facts"><div class="fact"><div class="fact__k">Role</div><div class="fact__v">Technical Direction — Vehicle Systems</div></div><div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Blender · 3ds Max · Chaos Vehicle · Nanite</div></div><div class="fact"><div class="fact__k">Period</div><div class="fact__v">10/2022 – 06/2023</div></div><div class="fact"><div class="fact__k">Context</div><div class="fact__v">Original concept pitched to the class, selected for production, led to release</div></div><div class="fact"><div class="fact__k">Scope</div><div class="fact__v">Technical direction across the team, plus the entire vehicle experience</div></div><div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Blender · 3ds Max · Chaos Vehicle · Nanite</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cs-layout">
+        <div><div class="cs-section" id="the-problem">
+        <h2>The problem</h2>
+        <div class="prose">
+                An arcade racer lives or dies on how the car feels, and the target was specific:
+                heavy, but fast, chaotic and responsive — easy to play, hard to master. The city
+                was also in constant redesign, so the vehicle had to keep its identity while the
+                world underneath it changed.
+                </div>
+      </div>
+<div class="cs-section" id="what-i-built">
+        <h2>What I built</h2>
+        <div class="steps"><div class="step">
+            <span class="step__n" aria-hidden="true">1</span>
+            <div><span class="step__t">A complete Chaos Vehicle dynamics model</span><span class="step__d">Mass distribution, torque curves, wheel friction, cornering stiffness and suspension spring rates, iterated against playtest feedback until handling read correctly at speed.</span></div>
+          </div>
+<div class="step">
+            <span class="step__n" aria-hidden="true">2</span>
+            <div><span class="step__t">A custom 6-wheel rig in Blender</span><span class="step__d">Built for accurate per-wheel ground response, then integrated into Unreal's physics pipeline. Six wheels drive is a system the defaults do not cover.</span></div>
+          </div>
+<div class="step">
+            <span class="step__n" aria-hidden="true">3</span>
+            <div><span class="step__t">A modular destruction system</span><span class="step__d">3ds Max Morpher driving realistic part separation — bumper, hood, lights — on impact.</span></div>
+          </div>
+<div class="step">
+            <span class="step__n" aria-hidden="true">4</span>
+            <div><span class="step__t">Nanite-supporting vehicle authoring in 3ds Max</span><span class="step__d">Modelled the full vehicle while keeping a high-poly workflow viable in engine.</span></div>
+          </div>
+<div class="step">
+            <span class="step__n" aria-hidden="true">5</span>
+            <div><span class="step__t">Continuity across map redesigns</span><span class="step__d">Re-tuned the vehicle as the environment changed, holding consistent handling behaviour rather than re-deriving it each time.</span></div>
+          </div>
+</div>
+      </div>
+<div class="cs-section" id="result">
+        <h2>Result</h2>
+        <div class="prose">
+                Shipped publicly on itch.io with the team. The vehicle work — programming,
+                modelling, rigging, destruction and feedback — was mine end to end, alongside
+                technical direction for the project.
+                </div>
+      </div>
+</div>
+        <aside class="cs-aside">
+          <div class="cs-aside__in">
+            <h2>On this page</h2>
+            <ol><li><a href="#the-problem">The problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#result">Result</a></li></ol>
+            <p class="mt-5"><a class="btn btn--sm" href="../contact.html">Contact</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">Gallery</span><h2>Evidence</h2>
+        <p class="sec-head__sub">Use the strongest evidence you have: a finished render, a breakdown pass, a tool screenshot, a profiler capture.</p>
+      </div>
+      
+<!-- PLACEHOLDER PH-G-rubber | Gallery for RUBBER | ideal: 16:9, 1920x1080, webp <350 KB; rig viewport capture at 100% zoom | file: assets/img/projects/rubber-gallery-01..NN.webp -->
+<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-G-rubber: Gallery for RUBBER">
+      <span class="ph__id">PH-G-rubber</span>
+      <span class="ph__label">Gallery for RUBBER</span>
+      <span class="ph__spec">16:9, 1920x1080, webp &lt;350 KB; rig viewport capture at 100% zoom</span>
+      <span class="ph__file">assets/img/projects/rubber-gallery-01..NN.webp</span>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cs-nav">
+        <a class="cs-nav__link" href="warno.html">
+          <span class="cs-nav__k">&larr; Previous</span>
+          <span class="cs-nav__t">WARNO</span>
+        </a>
+        <a class="cs-nav__link cs-nav__link--next" href="rally-project.html">
+          <span class="cs-nav__k">Next &rarr;</span>
+          <span class="cs-nav__t">Rally Project</span>
+        </a>
+      </div>
+      <p class="mt-6"><a class="btn" href="../work.html">All work <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h2 class="footer__h">Francisco De Carvalho Pereira</h2>
+        <p class="muted" style="font-size:var(--t-sm);max-width:34ch">
+          Technical Artist / Technical Director. Real-time 3D, pipeline automation
+          and performance. Marseille, France.
+        </p>
+        <p class="mt-4">
+          <a class="btn btn--primary btn--sm" href="../contact.html">Start a conversation</a>
+        </p>
+      </div>
+      <div>
+        <h2 class="footer__h">Index</h2>
+        <ul class="footer__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../breakdown.html">R&amp;D / Breakdown</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../skills.html">Skills</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Elsewhere &mdash; to supply</h2>
+        <!-- Placeholders are plain text on purpose: a link to a file or profile
+             that does not exist yet would be a broken link. README.md has the
+             drop-in markup for each one. -->
+        <ul class="footer__list">
+          <li><span class="tag">PH-08</span> CV &mdash; <span class="dim">assets/files/cv-francisco-de-carvalho-pereira.pdf</span></li>
+          <li><span class="tag">PH-03</span> LinkedIn</li>
+          <li><span class="tag">PH-04</span> GitHub</li>
+          <li><span class="tag">PH-05</span> ArtStation</li>
+          <li><span class="tag">PH-06</span> itch.io</li>
+          <li><span class="tag">PH-02</span> <span class="dim">YOUR_EMAIL</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; <span data-year>2026</span> Francisco De Carvalho Pereira</span>
+      <span>Hand-built static HTML &middot; no trackers &middot; no CDN</span>
+      <span>Available for Technical Artist / Technical Director roles</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

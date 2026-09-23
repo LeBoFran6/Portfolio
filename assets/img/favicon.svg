@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FD">
+  <rect width="64" height="64" rx="12" fill="#0A0B0D"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="11" fill="none" stroke="#FFDE34" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="32" y="43"
+        font-family="ui-monospace, Consolas, monospace"
+        font-size="27" font-weight="700" letter-spacing="-1"
+        fill="#FFDE34" text-anchor="middle">FD</text>
+</svg>
