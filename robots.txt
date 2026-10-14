@@ -1,7 +1,5 @@
-# Francisco De Carvalho Pereira — portfolio
-# PH-01: replace YOUR_SITE_URL with your real URL, then re-run this file's
-# one-line replace documented in README.md.
+# Francisco De Carvalho Pereira - portfolio
 User-agent: *
 Allow: /
 
-Sitemap: YOUR_SITE_URL/sitemap.xml
+Sitemap: https://lebofran6.github.io/Portfolio/sitemap.xml

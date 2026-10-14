@@ -384,6 +384,16 @@ section.tight { padding-block: clamp(24px, 3.4vw, 34px); }
   padding: 8px 14px;
   box-shadow: var(--sh-1);
 }
+.nav > a.btn,
+.nav > a.btn:visited {
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-color: var(--accent-ink);
+}
+.nav > a.btn:hover { color: var(--accent-ink); }
 .btn--primary.btn--sm { box-shadow: 3px 3px 0 var(--text); }
 .btn--primary.btn--sm:hover { box-shadow: 5px 5px 0 var(--text); }
 
@@ -756,11 +766,12 @@ section.tight { padding-block: clamp(24px, 3.4vw, 34px); }
   cursor: pointer;
   aspect-ratio: 16 / 9;
 }
-.reel__poster > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reel__poster > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .reel__play {
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -1028,13 +1039,14 @@ section.tight { padding-block: clamp(24px, 3.4vw, 34px); }
   flex: none;
 }
 .step__t {
+  display: block;
   font-family: var(--font-display);
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--text);
 }
-.step__d { color: var(--muted); font-size: 14px; margin-top: 3px; }
+.step__d { display: block; color: var(--muted); font-size: 14px; margin-top: 3px; }
 
 figure { margin: 0; }
 figcaption {
@@ -1473,6 +1485,117 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 
 /* No-JS: the mobile <details> panel must not trap the page */
 html:not(.js) .mobile-nav__panel { position: static; padding: 0; border: 0; }
+
+/* =============================================================================
+   19b. EVIDENCE GALLERY, PORTRAIT & "NO STILL" PANELS
+   Added when the real assets replaced the placeholders. Kept in the DA language:
+   square corners, 2px structural borders, monospace captions, hard shadows.
+   ========================================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
+  gap: var(--bw);
+}
+.shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: var(--bw) solid var(--border);
+  box-shadow: 4px 4px 0 var(--graphite);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.shot:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--graphite); }
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--dark);
+  border-bottom: var(--bw) solid var(--border);
+}
+.shot figcaption {
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Hero still on a case study */
+.wrap > figure > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--bw) solid var(--border);
+  box-shadow: 6px 6px 0 var(--graphite);
+  background: var(--dark);
+}
+figure figcaption {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* About page portrait */
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--bw) solid var(--border);
+  box-shadow: 6px 6px 0 var(--graphite);
+  background: var(--dark);
+}
+
+/* "No still" - an intentional, designed absence rather than a missing asset.
+   Used only where the work genuinely has no publishable capture. */
+.ph--req {
+  aspect-ratio: auto;
+  border-style: solid;
+  border-color: var(--graphite);
+  background: var(--bg-raised);
+  box-shadow: none;
+  padding: 18px 20px;
+  gap: 8px;
+}
+.ph--req .ph__id { background: var(--panel-2); color: var(--accent); }
+.ph--req .ph__label { font-size: 15px; }
+.ph--card {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 0;
+  background: var(--bg-raised);
+}
+.ph--card .ph__spec { max-width: 34ch; }
+
+/* R&D card evidence shot + the "nothing to show yet" line */
+.rd__shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top: var(--bw) solid var(--border);
+  border-bottom: var(--bw) solid var(--border);
+  background: var(--dark);
+}
+.rd__none {
+  margin: 0;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  background: var(--bg-raised);
+  border-top: var(--bw) solid var(--border);
+  border-bottom: var(--bw) solid var(--border);
+}
+
+@media (max-width: 620px) {
+  .gallery { grid-template-columns: 1fr; }
+}
 
 /* =============================================================================
    20. PRINT

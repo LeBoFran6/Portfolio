@@ -9,28 +9,26 @@
 <meta name="author" content="Francisco De Carvalho Pereira">
 <meta name="theme-color" content="#0A0B0D">
 <meta name="color-scheme" content="dark">
-<link rel="canonical" href="YOUR_SITE_URL/breakdown.html">
+<link rel="canonical" href="https://lebofran6.github.io/Portfolio/breakdown.html">
 
-<!-- PH-01 is the only value you must set before publishing; see README.md -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Francisco De Carvalho Pereira">
 <meta property="og:title" content="R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira">
 <meta property="og:description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
-<meta property="og:url" content="YOUR_SITE_URL/breakdown.html">
-<!-- PLACEHOLDER PH-OG | Open Graph share card | ideal: 1.91:1, 1200x630, jpg, <200 KB, must not be the hero still | file: assets/img/og/og-cover-1200x630.jpg -->
-<meta property="og:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+<meta property="og:url" content="https://lebofran6.github.io/Portfolio/breakdown.html">
+<meta property="og:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist / Technical Director">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira">
 <meta name="twitter:description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
-<meta name="twitter:image" content="YOUR_SITE_URL/assets/img/og/og-cover-1200x630.jpg">
+<meta name="twitter:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 <meta name="robots" content="index,follow">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist / Technical Director","url":"YOUR_SITE_URL/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist / Technical Director","url":"https://lebofran6.github.io/Portfolio/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -53,7 +51,7 @@
         <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
         <div class="mobile-nav__foot">
           <a class="btn btn--primary" href="contact.html">Contact</a>
-          <span class="tag">PH-08</span><span class="muted" style="font-size:var(--t-xs)">CV PDF</span>
+          <a class="btn btn--sm" href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV</a>
         </div>
       </div>
     </details>
@@ -83,7 +81,7 @@
   <section>
     <div class="wrap">
       <div class="callout mb-6">
-        <span class="callout__k">PH-RD-*</span>
+        <span class="callout__k">R&amp;D</span>
         <p>Thirteen R&amp;D cards below are written and structured, but <strong>every one
         needs its proof visual</strong> (node graph, profiler capture, tool UI, before/after).
         A technical director believes a screenshot of a graph and a frame-time readout far
@@ -105,14 +103,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-01 | Multi-view instrumentation with Scene Capture 2D — proof visual | ideal: 16:9, 1920x1080, PNG <=400 KB (keep graph text lossless) | file: assets/img/breakdown/scene-capture-frame-time-1920x1080.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-01: Multi-view instrumentation with Scene Capture 2D — proof visual">
-      <span class="ph__id">PH-RD-01</span>
-      <span class="ph__label">Multi-view instrumentation with Scene Capture 2D — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, PNG &lt;=400 KB (keep graph text lossless)</span>
-      <span class="ph__file">assets/img/breakdown/scene-capture-frame-time-1920x1080.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/scene-capture-frame-time.webp" alt="In-game frame with the performance HUD live, showing score, multiplier and frame instrumentation" width="1100" height="619" loading="lazy">
       <p><a class="btn btn--sm" href="projects/rally-project.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-deterministic-materials">
@@ -130,14 +121,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-02 | Deterministic material regeneration — proof visual | ideal: 16:9, 2560x1440, PNG <=600 KB, node labels must be legible | file: assets/img/breakdown/material-regeneration-node-graph-2560x1440.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-02: Deterministic material regeneration — proof visual">
-      <span class="ph__id">PH-RD-02</span>
-      <span class="ph__label">Deterministic material regeneration — proof visual</span>
-      <span class="ph__spec">16:9, 2560x1440, PNG &lt;=600 KB, node labels must be legible</span>
-      <span class="ph__file">assets/img/breakdown/material-regeneration-node-graph-2560x1440.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/material-regeneration-node-graph.webp" alt="Blender open with a geometry node graph and a Python console running the batch script" width="1056" height="454" loading="lazy">
       <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-headless-blender">
@@ -155,14 +139,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-03 | Headless Blender automation as an artist tool — proof visual | ideal: 16:9, 1920x1080, PNG or webp <=300 KB | file: assets/img/breakdown/headless-blender-pipeline-1920x1080.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-03: Headless Blender automation as an artist tool — proof visual">
-      <span class="ph__id">PH-RD-03</span>
-      <span class="ph__label">Headless Blender automation as an artist tool — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, PNG or webp &lt;=300 KB</span>
-      <span class="ph__file">assets/img/breakdown/headless-blender-pipeline-1920x1080.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/headless-blender-pipeline.webp" alt="A Windows file explorer window open on the render drop folder with the one-click batch file selected" width="1100" height="619" loading="lazy">
       <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-animation-validation">
@@ -180,14 +157,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-04 | Animation validation tool for animators — proof visual | ideal: 16:9, 1920x1080, PNG <=300 KB | file: assets/img/breakdown/unity-animation-validation-tool-1920x1080.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-04: Animation validation tool for animators — proof visual">
-      <span class="ph__id">PH-RD-04</span>
-      <span class="ph__label">Animation validation tool for animators — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, PNG &lt;=300 KB</span>
-      <span class="ph__file">assets/img/breakdown/unity-animation-validation-tool-1920x1080.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/unity-animation-validation-tool.webp" alt="Blender viewport showing four rigged game characters assembled in one scene" width="962" height="511" loading="lazy">
       <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-chaos-vehicle">
@@ -205,14 +175,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-05 | Six-wheel vehicle dynamics on Chaos Vehicle — proof visual | ideal: 16:9, 1920x1080, webp <=350 KB; viewport captures at 100% zoom | file: assets/img/breakdown/chaos-vehicle-six-wheel-rig-1920x1080.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-05: Six-wheel vehicle dynamics on Chaos Vehicle — proof visual">
-      <span class="ph__id">PH-RD-05</span>
-      <span class="ph__label">Six-wheel vehicle dynamics on Chaos Vehicle — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, webp &lt;=350 KB; viewport captures at 100% zoom</span>
-      <span class="ph__file">assets/img/breakdown/chaos-vehicle-six-wheel-rig-1920x1080.webp</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/chaos-vehicle-rig.webp" alt="The vehicle in wireframe with its custom six-wheel rig and suspension nodes visible" width="1027" height="549" loading="lazy">
       <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-destruction">
@@ -230,14 +193,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-06 | Modular destruction without physics debris — proof visual | ideal: 16:9, 1920x1080, webp <=350 KB; a 3-6 s mp4 loop is the strongest form | file: assets/img/breakdown/morpher-destruction-1920x1080.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-06: Modular destruction without physics debris — proof visual">
-      <span class="ph__id">PH-RD-06</span>
-      <span class="ph__label">Modular destruction without physics debris — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, webp &lt;=350 KB; a 3-6 s mp4 loop is the strongest form</span>
-      <span class="ph__file">assets/img/breakdown/morpher-destruction-1920x1080.webp</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/morpher-destruction.webp" alt="The vehicle in vertex colours showing the mask separation that drives panel detachment" width="1025" height="548" loading="lazy">
       <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-world-machine">
@@ -255,14 +211,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-07 | Procedural terrain: World Machine into engine — proof visual | ideal: 16:9, 1920x1080, PNG for the node graph (text legibility), webp for renders | file: assets/img/breakdown/world-machine-node-graph-1920x1080.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-07: Procedural terrain: World Machine into engine — proof visual">
-      <span class="ph__id">PH-RD-07</span>
-      <span class="ph__label">Procedural terrain: World Machine into engine — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, PNG for the node graph (text legibility), webp for renders</span>
-      <span class="ph__file">assets/img/breakdown/world-machine-node-graph-1920x1080.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/world-machine-node-graph.webp" alt="Three World Machine device graphs side by side: erosion, macro shape and detail passes" width="1100" height="537" loading="lazy">
       <p><a class="btn btn--sm" href="projects/environment-art.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-draw-calls">
@@ -273,21 +222,14 @@
       </div>
       <div class="rd__body">
         <dl>
-          <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
+          <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
           <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
           <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set.</dd></div>
           <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-08 | Draw call reduction across six console targets — proof visual | ideal: 16:9, 1920x1080, PNG for profiler captures <=400 KB | file: assets/img/breakdown/draw-call-profiler-1920x1080.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-08: Draw call reduction across six console targets — proof visual">
-      <span class="ph__id">PH-RD-08</span>
-      <span class="ph__label">Draw call reduction across six console targets — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, PNG for profiler captures &lt;=400 KB</span>
-      <span class="ph__file">assets/img/breakdown/draw-call-profiler-1920x1080.png</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="1100" height="619" loading="lazy">
       <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-ps1-budget">
@@ -305,14 +247,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-09 | Designing to 2 MB of RAM and 1 MB of VRAM — proof visual | ideal: 4:3, 640x480 native upscaled to 1280x960, webp <=250 KB | file: assets/img/breakdown/ps1-vram-budget-1280x960.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-09: Designing to 2 MB of RAM and 1 MB of VRAM — proof visual">
-      <span class="ph__id">PH-RD-09</span>
-      <span class="ph__label">Designing to 2 MB of RAM and 1 MB of VRAM — proof visual</span>
-      <span class="ph__spec">4:3, 640x480 native upscaled to 1280x960, webp &lt;=250 KB</span>
-      <span class="ph__file">assets/img/breakdown/ps1-vram-budget-1280x960.webp</span>
-    </div>
-    
+<p class="rd__none">Screenshot withheld &mdash; the budget breakdown is available in the case study or on request.</p>
       <p><a class="btn btn--sm" href="projects/lastmeal.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-gaze">
@@ -330,14 +265,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-10 | Runtime gaze decoupled from baked animation — proof visual | ideal: 16:9, 1920x1080, webp <=300 KB, tight crop on the face | file: assets/img/breakdown/runtime-gaze-system-1920x1080.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-10: Runtime gaze decoupled from baked animation — proof visual">
-      <span class="ph__id">PH-RD-10</span>
-      <span class="ph__label">Runtime gaze decoupled from baked animation — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, webp &lt;=300 KB, tight crop on the face</span>
-      <span class="ph__file">assets/img/breakdown/runtime-gaze-system-1920x1080.webp</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/runtime-gaze-system.webp" alt="Close-up of a rendered face mid-performance, showing decoupled eye and pupil control" width="1100" height="378" loading="lazy">
       <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-world-streaming">
@@ -355,14 +283,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-11 | Large-scale world streaming on a proprietary engine — proof visual | ideal: 16:9, 2560x1440, webp <=400 KB | file: assets/img/breakdown/world-streaming-sectors-2560x1440.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-11: Large-scale world streaming on a proprietary engine — proof visual">
-      <span class="ph__id">PH-RD-11</span>
-      <span class="ph__label">Large-scale world streaming on a proprietary engine — proof visual</span>
-      <span class="ph__spec">16:9, 2560x1440, webp &lt;=400 KB</span>
-      <span class="ph__file">assets/img/breakdown/world-streaming-sectors-2560x1440.webp</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/world-streaming-sectors.webp" alt="Aerial view of a lake and forest crossing in a large-scale streamed world" width="1100" height="618" loading="lazy">
       <p><a class="btn btn--sm" href="projects/warno.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-cad-repair">
@@ -380,14 +301,7 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-12 | Making unusable CAD deliverable — proof visual | ideal: 16:9, 1920x1080, webp <=300 KB | file: assets/img/breakdown/cad-repair-before-after-1920x1080.webp -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-12: Making unusable CAD deliverable — proof visual">
-      <span class="ph__id">PH-RD-12</span>
-      <span class="ph__label">Making unusable CAD deliverable — proof visual</span>
-      <span class="ph__spec">16:9, 1920x1080, webp &lt;=300 KB</span>
-      <span class="ph__file">assets/img/breakdown/cad-repair-before-after-1920x1080.webp</span>
-    </div>
-    
+<img class="rd__shot" src="assets/img/breakdown/cad-repair-before-after.webp" alt="Real-time architectural visualisation of a timber-clad house with garden and terraces" width="1100" height="571" loading="lazy">
       <p><a class="btn btn--sm" href="projects/architectural-visualisation.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-houdini">
@@ -405,16 +319,8 @@
         </dl>
       </div>
       
-<!-- PLACEHOLDER PH-RD-13 | (Optional slot) Houdini / procedural tooling — proof visual | ideal: 16:9, 2560x1440, PNG <=600 KB | file: assets/img/breakdown/houdini-network-2560x1440.png -->
-<div class="ph ph--16x9" role="img" aria-label="Placeholder PH-RD-13: (Optional slot) Houdini / procedural tooling — proof visual">
-      <span class="ph__id">PH-RD-13</span>
-      <span class="ph__label">(Optional slot) Houdini / procedural tooling — proof visual</span>
-      <span class="ph__spec">16:9, 2560x1440, PNG &lt;=600 KB</span>
-      <span class="ph__file">assets/img/breakdown/houdini-network-2560x1440.png</span>
-    </div>
-    
-      
-    </article>
+<p class="rd__none">Optional slot &mdash; reserved. No Houdini work is claimed here until there is something real to show.</p>
+      </article>
 </div>
     </div>
   </section>
@@ -444,17 +350,14 @@
         </ul>
       </div>
       <div>
-        <h2 class="footer__h">Elsewhere &mdash; to supply</h2>
-        <!-- Placeholders are plain text on purpose: a link to a file or profile
-             that does not exist yet would be a broken link. README.md has the
-             drop-in markup for each one. -->
+        <h2 class="footer__h">Elsewhere</h2>
         <ul class="footer__list">
-          <li><span class="tag">PH-08</span> CV &mdash; <span class="dim">assets/files/cv-francisco-de-carvalho-pereira.pdf</span></li>
-          <li><span class="tag">PH-03</span> LinkedIn</li>
-          <li><span class="tag">PH-04</span> GitHub</li>
-          <li><span class="tag">PH-05</span> ArtStation</li>
-          <li><span class="tag">PH-06</span> itch.io</li>
-          <li><span class="tag">PH-02</span> <span class="dim">YOUR_EMAIL</span></li>
+          <li><a href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV (PDF)</a></li>
+          <li><a href="https://www.linkedin.com/in/francisco-de-carvalho-pereira-aa0458196/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/LeBoFran6" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.artstation.com/lefran6" rel="me noopener" target="_blank">ArtStation</a></li>
+          <li><a href="https://lefran6.itch.io/" rel="me noopener" target="_blank">itch.io</a></li>
+          <li><a href="mailto:fran6pereira@gmail.com">fran6pereira@gmail.com</a></li>
         </ul>
       </div>
     </div>
