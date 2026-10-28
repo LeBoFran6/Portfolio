@@ -129,7 +129,7 @@ body {
   background: var(--bg);
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   min-height: 100dvh;
   display: flex;
@@ -212,7 +212,7 @@ a:hover { text-decoration: underline; }
 }
 
 .prose > * + * { margin-top: 16px; }
-.prose p { color: var(--muted); font-size: 15px; max-width: 790px; }
+.prose p { color: var(--muted); font-size: 15px; max-width: 65ch; }
 .prose strong { color: var(--text); font-weight: 700; }
 .prose em { color: var(--text); font-style: italic; }
 .prose p.muted { color: var(--dim); font-size: 14px; }
