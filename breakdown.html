@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist / Technical Director">
+<meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist — Tools & Pipeline">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="R&amp;D and Technical Breakdowns — Francisco De Carvalho Pereira">
 <meta name="twitter:description" content="Shader and material systems, tooling, vehicle dynamics, render-target instrumentation, memory budgets and profiling: the technical detail behind the case studies.">
@@ -28,7 +28,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 <meta name="robots" content="index,follow">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist / Technical Director","url":"https://lebofran6.github.io/Portfolio/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist — Tools & Pipeline","url":"https://lebofran6.github.io/Portfolio/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
       <span class="brand__mark" aria-hidden="true">FD</span>
       <span class="brand__txt">
         <span>Francisco De Carvalho Pereira</span>
-        <span>Technical Artist / TD</span>
+        <span>Technical Artist — Tools & Pipeline</span>
       </span>
     </a>
     <nav class="nav" aria-label="Primary">
@@ -98,12 +98,12 @@
         <dl>
           <div><dt>Problem</dt><dd>A client wanted several live camera angles on screen at once. Every extra active camera is another full render pass: culling, shadows, post-process.</dd></div>
           <div><dt>What I did</dt><dd>Rebuilt the system around Scene Capture 2D components writing to render targets, composited in UI. Decoupled capture cadence from game framerate, trimmed show flags (no shadows / post / fog), and matched capture resolution to actual on-screen size.</dd></div>
-          <div><dt>Result</dt><dd>~13 ms frame time with every view live, inside a 16.6 ms / 60 fps budget, 12 ms of it on the render thread.</dd></div>
+          <div><dt>Result</dt><dd>~13 ms frame time with every view live, inside a 16.6 ms / 60 fps budget, 12 ms of it on the render thread. (mesure non capturée)</dd></div>
           <div><dt>Next</dt><dd>Instanced static meshes and merged materials on the secondary captures would cut draw call submission further.</dd></div>
         </dl>
       </div>
       
-<img class="rd__shot" src="assets/img/breakdown/scene-capture-frame-time.webp" alt="In-game frame with the performance HUD live, showing score, multiplier and frame instrumentation" width="1100" height="619" loading="lazy">
+<img class="rd__shot" src="assets/img/breakdown/scene-capture-frame-time.webp" alt="RUBBER in-game frame, score and multiplier HUD." width="1100" height="619" loading="lazy">
       <p><a class="btn btn--sm" href="projects/rally-project.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-deterministic-materials">
@@ -224,12 +224,12 @@
         <dl>
           <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
           <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
-          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set.</dd></div>
+          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. (mesure non capturée)</dd></div>
           <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
         </dl>
       </div>
       
-<img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="1100" height="619" loading="lazy">
+<img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="WARNO in-game screenshot, production map." width="1100" height="619" loading="lazy">
       <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-ps1-budget">
@@ -301,7 +301,7 @@
         </dl>
       </div>
       
-<img class="rd__shot" src="assets/img/breakdown/cad-repair-before-after.webp" alt="Real-time architectural visualisation of a timber-clad house with garden and terraces" width="1100" height="571" loading="lazy">
+<img class="rd__shot" src="assets/img/breakdown/cad-repair-before-after.webp" alt="Architectural visualisation, timber-clad house (final render, no before shot available)." width="1100" height="571" loading="lazy">
       <p><a class="btn btn--sm" href="projects/architectural-visualisation.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-houdini">
@@ -314,7 +314,6 @@
         <dl>
           <div><dt>Problem</dt><dd>No Houdini work appears anywhere on your current site, so no entry was invented for it.</dd></div>
           <div><dt>What I did</dt><dd>If Houdini is part of your practice, drop a card here: the problem, the Houdini network you built, and what it removed from the manual loop.</dd></div>
-          <div><dt>Result</dt><dd>Delete this card if it does not apply. An empty claim is worse than a missing one.</dd></div>
           <div><dt>Next</dt><dd>A screenshot of the network plus one asset it generated is enough to be credible.</dd></div>
         </dl>
       </div>
@@ -331,7 +330,7 @@
       <div>
         <h2 class="footer__h">Francisco De Carvalho Pereira</h2>
         <p class="muted" style="font-size:var(--t-sm);max-width:34ch">
-          Technical Artist / Technical Director. Real-time 3D, pipeline automation
+          Technical Artist — Tools & Pipeline. Real-time 3D, pipeline automation
           and performance. Marseille, France.
         </p>
         <p class="mt-4">
@@ -353,7 +352,7 @@
         <h2 class="footer__h">Elsewhere</h2>
         <ul class="footer__list">
           <li><a href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV (PDF)</a></li>
-          <li><a href="https://www.linkedin.com/in/francisco-de-carvalho-pereira-aa0458196/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/franciscodecarvalhopereira/" rel="me noopener" target="_blank">LinkedIn</a></li>
           <li><a href="https://github.com/LeBoFran6" rel="me noopener" target="_blank">GitHub</a></li>
           <li><a href="https://www.artstation.com/lefran6" rel="me noopener" target="_blank">ArtStation</a></li>
           <li><a href="https://lefran6.itch.io/" rel="me noopener" target="_blank">itch.io</a></li>
@@ -364,7 +363,7 @@
     <div class="footer__base">
       <span>&copy; <span data-year>2026</span> Francisco De Carvalho Pereira</span>
       <span>Hand-built static HTML &middot; no trackers &middot; no CDN</span>
-      <span>Available for Technical Artist / Technical Director roles</span>
+      <span>Available for Technical Artist — Tools & Pipeline roles</span>
     </div>
   </div>
 </footer>
