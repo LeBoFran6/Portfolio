@@ -129,7 +129,7 @@ body {
   background: var(--bg);
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   min-height: 100dvh;
   display: flex;
@@ -212,7 +212,7 @@ a:hover { text-decoration: underline; }
 }
 
 .prose > * + * { margin-top: 16px; }
-.prose p { color: var(--muted); font-size: 15px; max-width: 790px; }
+.prose p { color: var(--muted); font-size: 15px; max-width: 65ch; }
 .prose strong { color: var(--text); font-weight: 700; }
 .prose em { color: var(--text); font-style: italic; }
 .prose p.muted { color: var(--dim); font-size: 14px; }
@@ -725,7 +725,8 @@ section.tight { padding-block: clamp(24px, 3.4vw, 34px); }
   gap: 14px;
   margin-top: clamp(30px, 5vw, 44px);
 }
-.hero__proof > div {
+.hero__proof > div,
+.hero__proof > a {
   background: var(--panel);
   border: var(--bw) solid var(--border);
   box-shadow: var(--sh-accent);
@@ -735,7 +736,10 @@ section.tight { padding-block: clamp(24px, 3.4vw, 34px); }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  text-decoration: none;
+  display: block;
 }
+.hero__proof > a:hover { color: var(--text); }
 .hero__proof b {
   display: block;
   font-family: var(--font-display);
