@@ -6,7 +6,7 @@ A = json.load(open(os.path.join(REPO, "_assets.json")))
 
 SITE   = "https://lebofran6.github.io/Portfolio"
 EMAIL  = "fran6pereira@gmail.com"
-LINKEDIN = "https://www.linkedin.com/in/francisco-de-carvalho-pereira-aa0458196/"
+LINKEDIN = "https://www.linkedin.com/in/franciscodecarvalhopereira/"
 GITHUB   = "https://github.com/LeBoFran6"
 ARTSTATION = "https://www.artstation.com/lefran6"
 ITCH   = "https://lefran6.itch.io/"
@@ -100,7 +100,7 @@ def channel(k, v, note, href, external=False):
 
 CHANNELS = [
     ("Email", EMAIL, "Best for roles and freelance", f"mailto:{EMAIL}", False),
-    ("LinkedIn", "linkedin.com/in/francisco-de-carvalho-pereira",
+    ("LinkedIn", "linkedin.com/in/franciscodecarvalhopereira",
      "Profile", LINKEDIN, True),
     ("GitHub", "github.com/LeBoFran6", "Tools and scripts", GITHUB, True),
     ("ArtStation", "artstation.com/lefran6", "Renders and breakdowns", ARTSTATION, True),
