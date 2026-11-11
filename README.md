@@ -1,4 +1,4 @@
-# Francisco De Carvalho Pereira — Technical Artist / Technical Director
+# Francisco De Carvalho Pereira — Technical Artist — Tools & Pipeline
 
 Static portfolio. Hand-built HTML, one stylesheet, one 8 KB script, real project
 imagery. **No framework, no CDN, no build step, no trackers, no webfont.** It works
@@ -26,8 +26,8 @@ python -m http.server 8080
 ## Deploying
 
 Push to `main` with **Settings → Pages → Source: `main` / `/ (root)`**. There is
-no build and no configuration. The canonical URL, Open Graph tags, `sitemap.xml`
-and `robots.txt` are all generated from one value in `build/07-seo-sitemap.py`.
+no build and no configuration. `sitemap.xml` lists all 19 pages with `.html`
+URLs and a `lastmod`, and `robots.txt` points at it.
 
 ---
 
