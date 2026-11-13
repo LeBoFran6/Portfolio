@@ -35,11 +35,11 @@ URLs and a `lastmod`, and `robots.txt` points at it.
 
 ```
 index.html            home — positioning, proof band, clip, six selected projects
-work.html             all twelve case studies, with discipline filters
+work.html             the six selected case studies, plus links to six smaller ones
 breakdown.html        thirteen R&D cards: problem / method / result / next
 about.html            bio, long-form bio, facts
 skills.html           27 skills, each rated from the work that proves it
-contact.html          live channels + a mailto form
+contact.html          live channels
 404.html
 projects/*.html       twelve case studies
 assets/css/site.css   the whole design system, tokens at the top
@@ -73,7 +73,7 @@ shift; `prefers-reduced-motion` disables all motion; the video is
 
 ## Performance
 
-No external requests of any kind. Images are WebP, sized when they were cut and
+Third-party requests are limited to YouTube thumbnails/embeds and the VaporBoat Unity build on Netlify. Images are WebP, sized when they were cut and
 carried only on pages that use them. Above-the-fold images deliberately carry no
 `decoding="async"`, because on this site the imagery is the argument and it should
 be in the first paint. Below-the-fold images are `loading="lazy"`.

@@ -42,13 +42,13 @@
       </span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
       <a class="btn btn--primary btn--sm" href="contact.html">Get in touch</a>
     </nav>
     <details class="mobile-nav" data-mobile-nav>
       <summary aria-label="Menu"><span></span><span></span><span></span></summary>
       <div class="mobile-nav__panel">
-        <a href="index.html">Home</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html" aria-current="page">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
         <div class="mobile-nav__foot">
           <a class="btn btn--primary" href="contact.html">Contact</a>
           <a class="btn btn--sm" href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV</a>
@@ -126,9 +126,9 @@
       </div>
       <div class="rd__body">
         <dl>
-          <div><dt>Problem</dt><dd>Every new skin and model was imported into Blender by hand, materials reassigned, then re-rendered: half a day of work, twice a week, and more when the team shipped a lot.</dd></div>
+          <div><dt>Problem</dt><dd>Every new skin and model was imported into Blender by hand, materials reassigned, then re-rendered: half a day of work per batch, several batches a week, and more when the team shipped a lot.</dd></div>
           <div><dt>What I did</dt><dd>A self-contained automation pipeline behind one .bat: IMPORT_ABC -&gt; ASSIGN_MATERIAL -&gt; IMPORT_TEXTURES -&gt; RENDER (stills + sequence) -&gt; shared folder. Runs on any networked PC with Blender installed. No licensing, no server, no build step.</dd></div>
-          <div><dt>Result</dt><dd>Half a day per batch became one double-click. Roughly 1–2 days a week returned to the team, in continuous production use for seven months, run by the artists without an engineer.</dd></div>
+          <div><dt>Result</dt><dd>Half a day per batch became one double-click. Roughly 2 days a week returned to the team, in continuous production use for seven months, run by the artists without an engineer.</dd></div>
           <div><dt>Next</dt><dd>A queue with per-machine locking would let several artists batch at once without colliding.</dd></div>
         </dl>
       </div>
@@ -218,7 +218,7 @@
         <dl>
           <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
           <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
-          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. [Placeholder — replace with measured draw-call reduction: before → after.]</dd></div>
+          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set.</dd></div>
           <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
         </dl>
       </div>
