@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive CV — VaporBoat — Francisco De Carvalho Pereira, Technical Artist — Tools & Pipeline</title>
+<meta name="description" content="An interactive, playable CV running in the browser. VaporBoat: a Unity WebGL build you can steer with ZQSD, plus the downloadable CV PDF.">
+<meta name="author" content="Francisco De Carvalho Pereira">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://lebofran6.github.io/Portfolio/interactive-cv.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Francisco De Carvalho Pereira">
+<meta property="og:title" content="Interactive CV — VaporBoat — Francisco De Carvalho Pereira">
+<meta property="og:description" content="A playable CV in the browser: VaporBoat, a Unity WebGL build you steer with ZQSD, plus the downloadable CV PDF.">
+<meta property="og:url" content="https://lebofran6.github.io/Portfolio/interactive-cv.html">
+<meta property="og:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist — Tools & Pipeline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interactive CV — VaporBoat — Francisco De Carvalho Pereira">
+<meta name="twitter:description" content="A playable CV in the browser: VaporBoat, a Unity WebGL build you steer with ZQSD, plus the downloadable CV PDF.">
+<meta name="twitter:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist — Tools & Pipeline","url":"https://lebofran6.github.io/Portfolio/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="index.html" aria-label="Francisco De Carvalho Pereira &mdash; home">
+      <span class="brand__mark" aria-hidden="true">F</span>
+      <span class="brand__txt">
+        <span>Francisco De Carvalho Pereira</span>
+        <span>Technical Artist — Tools & Pipeline</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      <a class="btn btn--primary btn--sm" href="contact.html">Get in touch</a>
+    </nav>
+    <details class="mobile-nav" data-mobile-nav>
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <div class="mobile-nav__panel">
+        <a href="index.html">Home</a><a href="work.html">Work</a><a href="breakdown.html">R&D</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+        <div class="mobile-nav__foot">
+          <a class="btn btn--primary" href="contact.html">Contact</a>
+          <a class="btn btn--sm" href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV</a>
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+  <section class="cs-hero">
+    <div class="wrap">
+      <span class="label label--accent">Interactive CV</span>
+      <h1>VaporBoat — a CV you can <span class="grad">play</span>.</h1>
+      <p class="lede">A playable, in-browser CV built in Unity: steer the boat with ZQSD. The
+      traditional PDF is right below it. Two ways to read the same person.</p>
+      <div class="cs-hero__chips">
+        <span class="chip">Unity</span>
+        <span class="chip">WebGL</span>
+        <span class="chip">C#</span>
+        <span class="chip">Playable in browser</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="panel panel--pad-lg" style="padding:0;overflow:hidden">
+        <div class="game-frame" data-game-frame style="position:relative;width:100%;max-width:100%;margin:0 auto;background:#000;overflow:hidden">
+          <iframe src="https://super-marigold-569977.netlify.app/" title="waveboat — interactive CV (Unity WebGL)"
+            style="position:absolute;top:0;left:0;width:1920px;height:1080px;border:0;display:block;transform-origin:top left"
+            allow="autoplay" scrolling="no"></iframe>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var GAME_W = 1920, GAME_H = 1080;
+          function fit() {
+            var frame = document.querySelector('[data-game-frame]');
+            if (!frame) return;
+            var iframe = frame.querySelector('iframe');
+            if (!iframe) return;
+            var w = frame.clientWidth;
+            if (!w) return;
+            var scale = w / GAME_W;
+            iframe.style.transform = 'scale(' + scale + ')';
+            frame.style.height = (GAME_H * scale) + 'px';
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fit);
+          } else {
+            fit();
+          }
+          window.addEventListener('resize', fit);
+        })();
+      </script>
+      <p class="mono mt-4" style="font-size:var(--t-xs)">Controls: ZQSD to steer the boat. Click the frame first to capture input. If the embed does not load, <a href="https://lefran6.itch.io/vaporboat" target="_blank" rel="noopener">play it on itch.io</a>.</p>
+      <p class="mt-5"><a class="btn btn--primary" href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>Download CV (PDF)</a> <a class="btn" href="https://lefran6.itch.io/vaporboat" target="_blank" rel="noopener">Open on itch.io <span class="arw" aria-hidden="true">&nearr;</span></a> <a class="btn" href="https://github.com/LeBoFran6/vaporboat" target="_blank" rel="noopener">Source on GitHub <span class="arw" aria-hidden="true">&nearr;</span></a></p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="panel panel--pad-lg">
+        <span class="label label--accent">About this build</span>
+        <h2 class="mt-4">What it is</h2>
+        <p class="mt-4">VaporBoat is a small Unity WebGL scene I built as a playful, interactive CV:
+        a low-poly boat you steer through a vapourwave-ish environment. It is the same person
+        as the PDF above, just with a throttle. Source code and the Unity project are on GitHub.</p>
+        <p class="mt-4"><a class="btn btn--sm" href="projects/rubber.html">See vehicle work (RUBBER) <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h2 class="footer__h">Francisco De Carvalho Pereira</h2>
+        <p class="muted" style="font-size:var(--t-sm);max-width:34ch">
+          Technical Artist — Tools & Pipeline. Real-time 3D, pipeline automation
+          and performance. Marseille, France.
+        </p>
+        <p class="mt-4">
+          <a class="btn btn--primary btn--sm" href="contact.html">Start a conversation</a>
+        </p>
+      </div>
+      <div>
+        <h2 class="footer__h">Index</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="breakdown.html">R&amp;D / Breakdown</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="interactive-cv.html">Interactive CV</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Elsewhere</h2>
+        <ul class="footer__list">
+          <li><a href="assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV (PDF)</a></li>
+          <li><a href="https://www.linkedin.com/in/franciscodecarvalhopereira/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/LeBoFran6" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.artstation.com/lefran6" rel="me noopener" target="_blank">ArtStation</a></li>
+          <li><a href="https://lefran6.itch.io/" rel="me noopener" target="_blank">itch.io</a></li>
+          <li><a href="mailto:fran6pereira@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Francisco,%0D%0A%0D%0A">fran6pereira@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
