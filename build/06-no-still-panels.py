@@ -3,7 +3,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 
 REPO = r"C:\Users\Fran6\Documents\GitHub\Portfolio"
 EMAIL = "fran6pereira@gmail.com"
-LINKEDIN = "https://www.linkedin.com/in/francisco-de-carvalho-pereira-aa0458196/"
+LINKEDIN = "https://www.linkedin.com/in/franciscodecarvalhopereira/"
 GITHUB = "https://github.com/LeBoFran6"
 ART = "https://www.artstation.com/lefran6"
 ITCH = "https://lefran6.itch.io/"
