@@ -5,8 +5,8 @@
 <script>document.documentElement.className=document.documentElement.className.replace("no-js","js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>RUBBER — Technical Direction — Vehicle Systems (student project) | Francisco De Carvalho Pereira</title>
-<meta name="description" content="RUBBER — Technical Direction — Vehicle Systems (student project). Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<title>RUBBER — Technical Direction, Vehicle Systems &amp; Environment Art | Francisco De Carvalho Pereira</title>
+<meta name="description" content="RUBBER — arcade driving game on Unreal Engine 5. Vehicle dynamics, custom six-wheel rig, modular destruction, vehicle art and futuristic city environment art.">
 <meta name="author" content="Francisco De Carvalho Pereira">
 <meta name="theme-color" content="#0A0B0D">
 <meta name="color-scheme" content="dark">
@@ -14,22 +14,42 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Francisco De Carvalho Pereira">
-<meta property="og:title" content="RUBBER — Technical Direction — Vehicle Systems (student project) | Francisco De Carvalho Pereira">
-<meta property="og:description" content="RUBBER — Technical Direction — Vehicle Systems (student project). Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<meta property="og:title" content="RUBBER — Technical Direction, Vehicle Systems &amp; Environment Art | Francisco De Carvalho Pereira">
+<meta property="og:description" content="Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom six-wheel rig, modular destruction and environment art.">
 <meta property="og:url" content="https://lebofran6.github.io/Portfolio/projects/rubber.html">
 <meta property="og:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Francisco De Carvalho Pereira &mdash; Technical Artist — Tools & Pipeline">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RUBBER — Technical Direction — Vehicle Systems (student project) | Francisco De Carvalho Pereira">
-<meta name="twitter:description" content="RUBBER — Technical Direction — Vehicle Systems (student project). Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.">
+<meta name="twitter:title" content="RUBBER — Technical Direction, Vehicle Systems &amp; Environment Art | Francisco De Carvalho Pereira">
+<meta name="twitter:description" content="Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom six-wheel rig, modular destruction and environment art.">
 <meta name="twitter:image" content="https://lebofran6.github.io/Portfolio/assets/img/og/og-cover-1200x630.jpg">
 
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/site.css">
 <meta name="robots" content="index,follow">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Francisco De Carvalho Pereira","jobTitle":"Technical Artist — Tools & Pipeline","url":"https://lebofran6.github.io/Portfolio/","address":{"@type":"PostalAddress","addressLocality":"Marseille","addressCountry":"FR"},"knowsAbout":["Unreal Engine 5","Unity","Real-time rendering","Technical art","Pipeline automation","Tooling","Shader optimisation","Console optimisation","Blender","Python","C#","Procedural terrain"]}</script>
+<style>
+  /* Page-local additions, kept in the site's DA language (square, 2px border, mono). */
+  .stack { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .stack__item { display:inline-flex; align-items:center; gap:8px; background:var(--panel); border:var(--bw) solid var(--border); box-shadow:var(--sh-2); padding:8px 12px; font-family:var(--font-mono); font-size:12px; color:var(--muted); }
+  .stack__item img { width:18px; height:18px; object-fit:contain; }
+  .stack__item img.wide { width:auto; height:15px; }
+
+  .quote { margin:24px 0 0; padding:20px 24px; background:var(--bg-raised); border:var(--bw) solid var(--border); border-left:5px solid var(--accent); box-shadow:var(--sh-2); }
+  .quote p { font-family:var(--font-display); font-size:18px; line-height:1.45; color:var(--text); }
+  .quote cite { display:block; margin-top:10px; font-family:var(--font-mono); font-size:12px; font-style:normal; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); }
+
+  .vars { display:grid; grid-template-columns:1fr; border:var(--bw) solid var(--border); box-shadow:var(--sh-2); margin-top:20px; }
+  .vars__row { display:grid; grid-template-columns:1fr; gap:4px; padding:12px 14px; background:var(--panel); }
+  .vars__row + .vars__row { border-top:var(--bw) solid var(--border); }
+  .vars__k { font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .vars__v { font-size:14px; color:var(--muted); }
+  @media (min-width:760px){ .vars__row { grid-template-columns:190px 1fr; gap:18px; } }
+
+  .media-note { margin-top:12px; font-family:var(--font-mono); font-size:12px; line-height:1.6; color:var(--dim); }
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -39,20 +59,20 @@
       <span class="brand__mark" aria-hidden="true">F</span>
       <span class="brand__txt">
         <span>Francisco De Carvalho Pereira</span>
-        <span>Technical Artist — Tools & Pipeline</span>
+        <span>Technical Artist — Tools &amp; Pipeline</span>
       </span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="../index.html">Home</a><a href="../work.html" aria-current="true">Work</a><a href="../breakdown.html">R&D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
+      <a href="../index.html">Home</a><a href="../breakdown.html">R&amp;D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
       <a class="btn btn--primary btn--sm" href="../contact.html">Get in touch</a>
     </nav>
     <details class="mobile-nav" data-mobile-nav>
       <summary aria-label="Menu"><span></span><span></span><span></span></summary>
       <div class="mobile-nav__panel">
-        <a href="../index.html">Home</a><a href="../work.html" aria-current="true">Work</a><a href="../breakdown.html">R&D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
+        <a href="../index.html">Home</a><a href="../breakdown.html">R&amp;D</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a>
         <div class="mobile-nav__foot">
           <a class="btn btn--primary" href="../contact.html">Contact</a>
-          <a class="btn btn--sm" href="../assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV</a>
+          <a class="btn btn--sm" href="../assets/files/cv-francisco-de-carvalho-pereira.pdf" download="resume-francisco-de-carvalho-pereira.pdf">Resume</a>
         </div>
       </div>
     </details>
@@ -61,78 +81,381 @@
 <main id="main">
 <section class="cs-hero">
     <div class="wrap">
-      <span class="label label--accent">TECHREFT Studio</span>
+      <span class="label label--accent">RUBBER / TECHREFT Studio</span>
       <h1>RUBBER</h1>
-      <p class="lede">Arcade driving game on Unreal Engine 5. Vehicle dynamics, custom rig and destruction systems.</p>
-      <div class="cs-hero__chips"><span class="chip chip--accent">TECHREFT Studio</span><span class="chip chip--accent">10/2022 – 06/2023</span><span class="chip chip--accent">end of studies</span><span class="chip chip--accent">engine</span><span class="chip chip--accent">tools</span></div>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <div class="reel reveal" style="position:relative;aspect-ratio:16/9;margin-top:24px;overflow:hidden">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/UDVu0aeyu1U?autoplay=1&mute=1&rel=0&modestbranding=1" title="RUBBER trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="lede">Arcade driving game on Unreal Engine 5. I pitched the concept to my class, then led an eight-person student team through production — owning vehicle dynamics, the custom six-wheel rig, modular destruction, the taxi art and the futuristic city it all drives through.</p>
+      <div class="cs-hero__chips"><span class="chip chip--accent">TECHREFT Studio</span><span class="chip chip--accent">10/2022 – 06/2023</span><span class="chip chip--accent">ESMA · end of studies</span><span class="chip chip--accent">Unreal Engine 5</span><span class="chip chip--accent">Team of 8</span></div>
+      <figure class="mt-5">
+        <img src="../assets/img/projects/rubber-hero.webp" alt="RUBBER key art: the orange taxi drifting through a neon city, with the TECHREFT Studio production credit and team names" width="1600" height="900">
+        <figcaption>Key art / poster treatment — the taxi, the city and the TECHREFT Studio credit. The vertical A3 version belongs in the gallery below.</figcaption>
+      </figure>
+      <div class="stack mt-4" role="group" aria-label="Software used on RUBBER">
+        <span class="stack__item"><img src="../assets/img/skills/unreal-engine.svg" alt="">Unreal Engine 5</span>
+        <span class="stack__item"><img src="../assets/img/skills/blender.svg" alt="">Blender</span>
+        <span class="stack__item"><img src="../assets/img/skills/3dsmax.svg" alt="">3ds Max</span>
+        <span class="stack__item"><img src="../assets/img/skills/substance-painter.svg" alt="">Substance Painter</span>
+        <span class="stack__item">Chaos Vehicle</span>
+        <span class="stack__item">Nanite</span>
       </div>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap">
-      <div class="facts"><div class="fact"><div class="fact__k">Role</div><div class="fact__v">Technical Direction — Vehicle Systems (student project)</div></div><div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Blender · 3ds Max · Chaos Vehicle · Nanite</div></div><div class="fact"><div class="fact__k">Period</div><div class="fact__v">10/2022 – 06/2023</div></div><div class="fact"><div class="fact__k">Context</div><div class="fact__v">End-of-studies project: concept pitched to the class, selected among 35 proposals (only 4 selected), led an 8-person team to release</div></div><div class="fact"><div class="fact__k">Role</div><div class="fact__v">Technical direction and de facto game direction for the team (vehicle experience end to end)</div></div><div class="fact"><div class="fact__k">Scope</div><div class="fact__v">Technical direction across the team, plus the entire vehicle experience</div></div><div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Blender · 3ds Max · Chaos Vehicle · Nanite</div></div></div>
+      <figure>
+        <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/UDVu0aeyu1U?autoplay=1&mute=1&rel=0&modestbranding=1" title="Teaser Rubber ESMA ETPA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <figcaption>Teaser — “Teaser Rubber ESMA ETPA”.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact"><div class="fact__k">Role</div><div class="fact__v">Technical Direction / Vehicle Systems — plus programmer, environment artist and lighting artist</div></div>
+        <div class="fact"><div class="fact__k">Studio</div><div class="fact__v">TECHREFT Studio · ESMA end-of-studies project</div></div>
+        <div class="fact"><div class="fact__k">Period</div><div class="fact__v">10/2022 – 06/2023 (9 months)</div></div>
+        <div class="fact"><div class="fact__k">Team</div><div class="fact__v">8 students</div></div>
+        <div class="fact"><div class="fact__k">Scope</div><div class="fact__v">Vehicle dynamics · rigging · destruction · vehicle art · environment art · missions · QA</div></div>
+        <div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Chaos Vehicle · Nanite · Blender · 3ds Max · Substance Painter</div></div>
+        <div class="fact"><div class="fact__k">Origin</div><div class="fact__v">Concept pitched to the class and selected for production — chosen among 35 proposals, of which only 4 were made</div></div>
+        <div class="fact"><div class="fact__k">Release</div><div class="fact__v">Public Windows build on itch.io</div></div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
       <div class="cs-layout">
-        <div><div class="cs-section" id="the-problem">
-        <h2>The problem</h2>
-        <div class="prose">
-                An arcade racer lives or dies on how the car feels, and the target was specific:
-                heavy, but fast, chaotic and responsive — easy to play, hard to master. The city
-                was also in constant redesign, so the vehicle had to keep its identity while the
-                world underneath it changed.
-                </div>
-      </div>
-<div class="cs-section" id="what-i-built">
-        <h2>What I built</h2>
-        <div class="steps"><div class="step">
-            <span class="step__n" aria-hidden="true">1</span>
-            <div><span class="step__t">A complete Chaos Vehicle dynamics model</span><span class="step__d">Mass distribution, torque curves, wheel friction, cornering stiffness and suspension spring rates, iterated against playtest feedback until handling read correctly at speed.</span></div>
+        <div>
+
+          <div class="cs-section" id="overview">
+            <h2>Overview</h2>
+            <div class="prose">
+              <p>RUBBER is the game idea I developed with eight students during the last year at ESMA. I pitched the original concept to the class, it was selected for production, and I led the project through to release. It is my most significant project to date: nine months, a full team, and a city that had to render as fast as the player could drive.</p>
+              <p>My role covered technical direction across the team, the pipeline decisions, the public itch.io release page — and, at the other end of the scale, the individual parts of the taxi: programming, 3D design, rigging, destruction and the feedback loop that made the handling feel right.</p>
+              <p class="muted">Feel free to explore the areas I worked on: <a href="#intention">the intention</a>, <a href="#programming">programming</a>, <a href="#rig">the six-wheel rig</a>, <a href="#destruction">destruction</a>, <a href="#vehicle-art">vehicle art</a>, <a href="#environment">environment art</a>, <a href="#missions">missions</a> and <a href="#feedback">feedback</a>.</p>
+            </div>
+            <blockquote class="quote">
+              <p>“I really enjoyed designing the driving experience and the visual aspects of the taxi in RUBBER.”</p>
+              <cite>Francisco De Carvalho Pereira — Technical Direction / Vehicle Systems</cite>
+            </blockquote>
+            <figure class="mt-5">
+              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/JweV7-lHMXk?autoplay=1&mute=1&rel=0&modestbranding=1" title="HOLY TAXI! — the prototype that got the project selected" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>“HOLY TAXI!” — the prototype that got the project selected for production.</figcaption>
+            </figure>
+            <div class="cluster mt-5">
+              <a class="btn btn--primary" href="https://lefran6.itch.io/rubber" rel="noopener" target="_blank">Try Rubber <span class="arw" aria-hidden="true">&rarr;</span></a>
+              <a class="btn" href="https://fran6pereira.wixsite.com/portfolio-francisco/copie-de-environement" rel="noopener" target="_blank">Environment art breakdown (original)</a>
+            </div>
           </div>
-<div class="step">
-            <span class="step__n" aria-hidden="true">2</span>
-            <div><span class="step__t">A custom 6-wheel rig in Blender</span><span class="step__d">Built for accurate per-wheel ground response, then integrated into Unreal's physics pipeline. Six wheels drive is a system the defaults do not cover.</span></div>
+
+          <div class="cs-section" id="intention">
+            <h2>The intention</h2>
+            <div class="prose">
+              <p>The intention was a car that is very sturdy, yet also quite nimble — something anyone could drive, with a strong arcade feeling. Heavy, but fast. Chaotic and responsive. Easy to play, hard to master.</p>
+              <p>I started with the sports car provided in Unreal's vehicle template. With Chaos Wheeled Vehicle, replicating the physics of a real car — traction, torque, wheel friction, grip, springs — was pretty simple. The problem was the opposite: the car from Unreal was too realistic. Getting the arcade feeling I was looking for meant iterating a lot and getting to know the system well enough to bend it.</p>
+              <p>Three things ran in parallel the whole way through: <strong>programming</strong>, <strong>3D</strong> and <strong>feedback</strong>.</p>
+            </div>
+            <div class="grid grid--3 mt-5">
+              <div class="panel"><span class="label label--accent">01</span><h3>Programming</h3><p>Vehicle systems, Chaos Vehicle parameters, 3C and half the missions — from quest design to QA.</p></div>
+              <div class="panel"><span class="label label--accent">02</span><h3>3D</h3><p>The taxi, the six-wheel rig, the Morpher destruction targets and the wider city asset kit.</p></div>
+              <div class="panel"><span class="label label--accent">03</span><h3>Feedback</h3><p>Playtests, handling notes and visible impact response — the loop that decided when the car felt right.</p></div>
+            </div>
+            <div class="ph ph--16x9 mt-5 reveal">
+              <span class="ph__id">RUB-INTENT-01</span>
+              <span class="ph__label">Stock template vs final arcade feel</span>
+              <span class="ph__spec">Replace with: short side-by-side video or GIF of the same corner taken at the same speed — Unreal template car on one side, final RUBBER taxi on the other. The point is the difference in turn-in, slide and recovery, not the scenery.</span>
+              <span class="ph__file">expected: rubber-template-vs-final.gif / .mp4</span>
+            </div>
           </div>
-<div class="step">
-            <span class="step__n" aria-hidden="true">3</span>
-            <div><span class="step__t">A modular destruction system</span><span class="step__d">3ds Max Morpher driving realistic part separation — bumper, hood, lights — on impact.</span></div>
+
+          <div class="cs-section" id="programming">
+            <h2>Programming — the vehicle</h2>
+            <div class="prose">
+              <p>The main variables I used to get the arcade feeling were <strong>mass, wheel friction, cornering stiffness, torque, torque curve, RPM and springs</strong>. They were never tuned in isolation: changing the springs changed how much the wheels worked, which changed how much friction was useful, which changed how the torque curve read out of a corner.</p>
+              <p>However, the Chaos Wheeled Vehicle system is a very complete tool. The work was less about adding systems and more about knowing which parameter to move, in what order, and against which playtest note. The vehicle was then re-tuned across multiple map redesigns, holding consistent handling behaviour as the environment changed underneath it.</p>
+            </div>
+            <div class="vars">
+              <div class="vars__row"><span class="vars__k">Mass / distribution</span><span class="vars__v">Weight and balance of the chassis — how heavy the taxi feels and how it transfers load.</span></div>
+              <div class="vars__row"><span class="vars__k">Wheel friction</span><span class="vars__v">Grip and slip at contact level — how easily the car breaks away and comes back.</span></div>
+              <div class="vars__row"><span class="vars__k">Cornering stiffness</span><span class="vars__v">How quickly the tyres answer steering input — turn-in and response at speed.</span></div>
+              <div class="vars__row"><span class="vars__k">Torque / torque curve</span><span class="vars__v">Acceleration and pull through the rev range — the arcade shove out of corners.</span></div>
+              <div class="vars__row"><span class="vars__k">RPM</span><span class="vars__v">Engine range and where the usable power sits in that curve.</span></div>
+              <div class="vars__row"><span class="vars__k">Springs</span><span class="vars__v">Suspension spring rates — body movement, stability and per-wheel ground contact.</span></div>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-TUNE-01</span>
+                <span class="ph__label">Chaos Vehicle setup</span>
+                <span class="ph__spec">Replace with: full Details-panel capture of the final Chaos Vehicle setup — mass, centre of mass, torque curve and RPM range. Use the shipped values, not a default preset, so the tuning story is legible.</span>
+                <span class="ph__file">expected: rubber-chaos-setup.png / .webp</span>
+              </div>
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-TUNE-02</span>
+                <span class="ph__label">Wheel &amp; suspension values</span>
+                <span class="ph__spec">Replace with: wheel setup capture showing friction, cornering stiffness and spring rates per wheel. Ideal as a front/rear comparison that explains the six-wheel behaviour.</span>
+                <span class="ph__file">expected: rubber-wheel-tuning.png / .webp</span>
+              </div>
+            </div>
+            <div class="ph ph--16x9 mt-4 reveal">
+              <span class="ph__id">RUB-TUNE-03</span>
+              <span class="ph__label">Iteration history — before / after</span>
+              <span class="ph__spec">Replace with: a small comparison sheet (3–4 passes) or a graph of parameter changes against playtest notes. Should show that the final numbers came from feedback and map redesigns, not from a single guess.</span>
+              <span class="ph__file">expected: rubber-tuning-passes.webp / .gif</span>
+            </div>
+            <p class="media-note">Source images mentioned for this section: <span class="mono">vvvv.png · vvvvvvvvvvvvvvvvvvvvv.png · VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV.png · vvvvvvvvvvvv.png · v.png · vvvvvvv.png · vvv.png</span> — these are the Chaos panel captures to drop into the three slots above.</p>
           </div>
-<div class="step">
-            <span class="step__n" aria-hidden="true">4</span>
-            <div><span class="step__t">Nanite-supporting vehicle authoring in 3ds Max</span><span class="step__d">Modelled the full vehicle while keeping a high-poly workflow viable in engine.</span></div>
+
+          <div class="cs-section" id="rig">
+            <h2>A custom six-wheel rig</h2>
+            <div class="prose">
+              <p>The template covers a four-wheel car. The RUBBER taxi has six — two at the front, four at the rear — so I built a custom rig in Blender for accurate per-wheel ground response, then integrated it into Unreal's physics pipeline. Every wheel needed to load, slip and recover on its own as the car crossed uneven ground and changing districts.</p>
+            </div>
+            <figure class="mt-5">
+              <img src="../assets/img/projects/rubber-g05.webp" alt="Blender viewport with the taxi and the Unreal vehicle rigging panel open, showing the wheel bones for the six-wheel setup" width="1100" height="664" loading="lazy">
+              <figcaption>Blender → Unreal: the vehicle rigging setup with the six wheel assignments (two front, four rear).</figcaption>
+            </figure>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-RIG-01</span>
+                <span class="ph__label">Blender rig — bones &amp; naming</span>
+                <span class="ph__spec">Replace with: clean viewport capture of the six-wheel skeleton, wheel bone names and constraints, ideally with a top-view diagram of wheel positions. This is the proof of the custom rig, not a beauty render.</span>
+                <span class="ph__file">expected: rubber-6wheel-rig.png / .webp</span>
+              </div>
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-RIG-02</span>
+                <span class="ph__label">Per-wheel response in engine</span>
+                <span class="ph__spec">Replace with: in-engine debug view (suspension traces / wheel contact) with the car crossing bumps or a kerb. Should show each wheel loading independently in the shipped physics pipeline.</span>
+                <span class="ph__file">expected: rubber-wheel-ground-response.gif / .mp4</span>
+              </div>
+            </div>
+            <figure class="mt-5">
+              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/0zKXsSzcoGE?autoplay=1&mute=1&rel=0&modestbranding=1" title="Comparison: 6-wheeled car Cyberpunk 2077 vs Rubber Cab" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>“Comparison: 6-wheeled car Cyberpunk 2077 vs Rubber Cab” — the six-wheel layout next to a reference.</figcaption>
+            </figure>
           </div>
-<div class="step">
-            <span class="step__n" aria-hidden="true">5</span>
-            <div><span class="step__t">Continuity across map redesigns</span><span class="step__d">Re-tuned the vehicle as the environment changed, holding consistent handling behaviour rather than re-deriving it each time.</span></div>
+
+          <div class="cs-section" id="destruction">
+            <h2>Modular destruction</h2>
+            <div class="prose">
+              <p>I implemented a modular destruction system using 3ds Max Morpher. Impact data drives authored morph targets so that parts separate realistically — bumper, hood, lights — instead of the whole body deforming as one piece. The system had to stay modular: the same approach could be extended to new panels without rebuilding the vehicle.</p>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <figure class="shot"><img src="../assets/img/projects/rubber-g06.webp" alt="Wireframe view of the taxi with the destruction target regions highlighted in red" width="1027" height="549" loading="lazy"><figcaption>Wireframe view — the morph target regions mapped on the body.</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-g07.webp" alt="Vertex-colour view of the taxi showing the mask separation used to drive panel detachment" width="1025" height="548" loading="lazy"><figcaption>Vertex-colour mask — the separation that drives panel detachment.</figcaption></figure>
+            </div>
+            <figure class="mt-5">
+              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/rnjsMA0MVMk?autoplay=1&mute=1&rel=0&modestbranding=1" title="Rubber Car Destructions — BlendShapes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>“Rubber Car Destructions — BlendShapes” — the morph-driven part separation in motion.</figcaption>
+            </figure>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-DEST-01</span>
+                <span class="ph__label">Impact sequence</span>
+                <span class="ph__spec">Replace with: short GIF or video of an impact in engine — bumper, hood and lights separating over successive frames. One clean hit is enough; it should read as authored part separation, not generic deformation.</span>
+                <span class="ph__file">expected: rubber-destruction-impact.gif / .mp4</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-DEST-02</span>
+                <span class="ph__label">Morpher target setup</span>
+                <span class="ph__spec">Replace with: 3ds Max capture of the Morpher modifier and its target list, with slider values or the target meshes visible. Explains how one impact input drives several independent panels.</span>
+                <span class="ph__file">expected: rubber-3dsmax-morpher.png / .webp</span>
+              </div>
+            </div>
           </div>
-</div>
-      </div>
-<div class="cs-section" id="result">
-        <h2>Result</h2>
-        <div class="prose">
-                Selected among 35 proposals (only 4 made it to production), RUBBER was an
-                end-of-studies project I led as technical director and de facto game director for
-                an 8-person team, from concept pitch to public release on itch.io. The vehicle work
-                — programming, modelling, rigging, destruction and feedback — was mine end to end.
-                [Placeholder — replace with measured metrics (frame time, draw calls, memory) if available.]
-                </div>
-      </div>
-</div>
+
+          <div class="cs-section" id="vehicle-art">
+            <h2>Vehicle art &amp; 3D</h2>
+            <div class="prose">
+              <p>I modelled the full vehicle in 3ds Max and used Nanite to keep a high-poly workflow viable in engine — the silhouette and panel detail did not have to be sacrificed to fit the runtime budget. The same hands-on modelling ran beyond the car: I also made the main character and a range of city props.</p>
+              <p>In total I was in charge of the entire car creation process: programming, 3D design, rigging, destruction and feedback. The visual identity of the taxi — its proportions, its lights, its worn-in surface — was part of the driving experience, not decoration around it.</p>
+            </div>
+            <figure class="mt-5">
+              <img src="../assets/img/projects/rubber-g03.webp" alt="The yellow taxi seen from the front in a garage bay, showing the custom bodywork and lighting" width="1100" height="618" loading="lazy">
+              <figcaption>The taxi in the garage bay — custom body, lights and materials.</figcaption>
+            </figure>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-3D-01</span>
+                <span class="ph__label">High-poly → Nanite mesh</span>
+                <span class="ph__spec">Replace with: 3ds Max viewport of the taxi (wireframe or turntable) with the high-poly panels visible, plus the in-engine Nanite mesh statistics. The point is that the detailed source survives into the engine.</span>
+                <span class="ph__file">expected: rubber-taxi-nanite.png / .gif</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-3D-02</span>
+                <span class="ph__label">Materials &amp; UVs</span>
+                <span class="ph__spec">Replace with: Substance Painter capture of the taxi texture sets — paint, wear, decals, lights — or a UV layout. Should show how the visual identity of the taxi was authored.</span>
+                <span class="ph__file">expected: rubber-taxi-texturing.png / .webp</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-3D-03</span>
+                <span class="ph__label">Nanite in engine</span>
+                <span class="ph__spec">Replace with: engine-side capture of the Nanite visualisation or triangle-count/stat panel on the taxi, to make the high-poly workflow claim concrete.</span>
+                <span class="ph__file">expected: rubber-nanite-stats.png / .webp</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-3D-04</span>
+                <span class="ph__label">Character &amp; city props</span>
+                <span class="ph__spec">Replace with: contact sheet of the other meshes I modelled — the main character and a selection of city props — shown together at a readable scale.</span>
+                <span class="ph__file">expected: rubber-character-props.webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-section" id="environment">
+            <h2>Environment &amp; level art</h2>
+            <div class="prose">
+              <p>The creation of the map was the main focus of the entire project. Environment art and level art evolved continuously, toward one goal: a big futuristic city that can render as fast as the player drives. To get there, we built various districts, each with its own colour and ambience intention and its own specific props.</p>
+              <p>My process started with a blockout based on the references I had, to project myself into the composition in line with the game navigation and the lore. Then I built the environment with modules; once the result was satisfying, I added props to create the narrative. I iterated until the result was polished.</p>
+              <p>The ads, holograms, props and vehicles played a significant role in guiding the player through the level. The primary challenge was achieving diversity from a limited number of modular building assets and props. I also created the beginning of the game: it started as a tutorial device, but ended up serving storytelling and rhythm — the “wow effect” at the start of the game.</p>
+            </div>
+            <div class="flow mt-5" role="group" aria-label="Environment art workflow">
+              <div class="flow__stage flow__stage--s0"><div class="flow__card"><div class="flow__step"><span>Start</span><span class="flow__dot" aria-hidden="true"></span></div><div class="flow__icon" aria-hidden="true">&#128218;</div><div class="flow__name">REFERENCES</div></div></div>
+              <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+              <div class="flow__stage flow__stage--s1"><div class="flow__card"><div class="flow__step"><span>01</span><span class="flow__dot" aria-hidden="true"></span></div><div class="flow__icon" aria-hidden="true">&#9634;</div><div class="flow__name">BLOCKOUT</div></div></div>
+              <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+              <div class="flow__stage flow__stage--s2"><div class="flow__card"><div class="flow__step"><span>02</span><span class="flow__dot" aria-hidden="true"></span></div><div class="flow__icon" aria-hidden="true">&#9618;</div><div class="flow__name">MODULES</div></div></div>
+              <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+              <div class="flow__stage flow__stage--s3"><div class="flow__card"><div class="flow__step"><span>03</span><span class="flow__dot" aria-hidden="true"></span></div><div class="flow__icon" aria-hidden="true">&#127970;</div><div class="flow__name">PROPS &amp; STORY</div></div></div>
+              <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+              <div class="flow__stage flow__stage--s4"><div class="flow__card"><div class="flow__step"><span>Output</span><span class="flow__dot" aria-hidden="true"></span></div><div class="flow__icon" aria-hidden="true">&#10004;</div><div class="flow__name">POLISHED DISTRICT</div></div></div>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <figure class="shot"><img src="../assets/img/projects/rubber-g02.webp" alt="Wide night view of the futuristic city: dense signage, lit buildings and a large moon over the streets" width="1100" height="619" loading="lazy"><figcaption>The city at night — colour-blocked districts, signage and atmosphere.</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-g04.webp" alt="Top-down layout in 3ds Max showing the modular buildings, player character, vehicles and props laid out by category" width="1100" height="619" loading="lazy"><figcaption>The modular kit laid out in 3ds Max: buildings, character, vehicles and props.</figcaption></figure>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-ENV-01</span>
+                <span class="ph__label">Blockout → final</span>
+                <span class="ph__spec">Replace with: the same camera position in one district, first as the reference-based blockout and then finished. Shows the navigation and composition decisions before the props went in.</span>
+                <span class="ph__file">expected: rubber-blockout-vs-final.webp</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-ENV-02</span>
+                <span class="ph__label">District colour script</span>
+                <span class="ph__spec">Replace with: 3–4 stills of the districts side by side, each labelled with its intended colour and ambience. Should make the “each district has its own mood” decision visible.</span>
+                <span class="ph__file">expected: rubber-districts.webp</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-ENV-03</span>
+                <span class="ph__label">One kit, many variations</span>
+                <span class="ph__spec">Replace with: inventory shot of the modular building pieces and prop families on a grid, ideally with a few finished façades built from them. The point is diversity from a limited asset set.</span>
+                <span class="ph__file">expected: rubber-modular-kit.webp</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-ENV-04</span>
+                <span class="ph__label">Ads, holograms &amp; wayfinding</span>
+                <span class="ph__spec">Replace with: gameplay still of a street where ads, holograms, props and traffic guide the route — ideally annotated with the reading direction. Show the city doing navigation work.</span>
+                <span class="ph__file">expected: rubber-wayfinding.png / .webp</span>
+              </div>
+            </div>
+            <div class="ph ph--16x9 mt-4 reveal">
+              <span class="ph__id">RUB-ENV-05</span>
+              <span class="ph__label">Opening — tutorial to “wow”</span>
+              <span class="ph__spec">Replace with: video or storyboard of the opening beats, from the first tutorial instruction through to the reveal of the city. Should show why it stayed in the game as storytelling and rhythm, not just instruction.</span>
+              <span class="ph__file">expected: rubber-opening-sequence.gif / .mp4</span>
+            </div>
+            <p class="media-note">Longer version on the original page: <a href="https://fran6pereira.wixsite.com/portfolio-francisco/copie-de-environement" rel="noopener" target="_blank">Environment Art — RUBBER portfolio (Wix)</a>.</p>
+          </div>
+
+          <div class="cs-section" id="missions">
+            <h2>Missions, 3C &amp; QA</h2>
+            <div class="prose">
+              <p>As a programmer I programmed half of the missions in the game — from quest design through implementation to QA. Alongside that, I programmed and crafted the entire driving experience: vehicle and 3C programming.</p>
+              <p>The missions were not separate from the driving: they were the structure that made the city legible and gave the handling somewhere to go. Designing a quest, building it, then playing it until the edge cases were gone was one continuous loop.</p>
+            </div>
+            <div class="grid grid--3 mt-5">
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-CODE-01</span>
+                <span class="ph__label">Quest design → build</span>
+                <span class="ph__spec">Replace with: a mission graph or flow diagram next to the corresponding Blueprint/Unreal implementation. One representative quest is enough to show design-to-code ownership.</span>
+                <span class="ph__file">expected: rubber-mission-graph.png / .webp</span>
+              </div>
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-CODE-02</span>
+                <span class="ph__label">Vehicle / 3C</span>
+                <span class="ph__spec">Replace with: Blueprint or code capture of the vehicle and 3C setup — camera behaviour, input/control handling and the link to the Chaos vehicle. Prefer one readable graph over several small ones.</span>
+                <span class="ph__file">expected: rubber-vehicle-3c.png / .webp</span>
+              </div>
+              <div class="ph ph--4x3 reveal">
+                <span class="ph__id">RUB-CODE-03</span>
+                <span class="ph__label">QA pass</span>
+                <span class="ph__spec">Replace with: a mission QA checklist, bug list or before/after fix capture. Should show that quests were tested and corrected, not only implemented.</span>
+                <span class="ph__file">expected: rubber-mission-qa.png / .webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-section" id="feedback">
+            <h2>Feedback: tuning by feel</h2>
+            <div class="prose">
+              <p>Handling was decided in playtests, not on paper. Mass, wheel friction, cornering stiffness, torque, torque curve, RPM and springs were iterated against feedback until the car read correctly at speed — then tuned again whenever the map changed under it. That loop is the feedback part of the job: knowing what to change from how the car felt, not from a number on a sheet.</p>
+              <p>The other half was what the player saw and heard on impact. Smoke, debris and part separation gave the crashes weight and made the sturdiness of the taxi legible. These were early prototype captures, before the final city and lighting were in place.</p>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <figure class="shot"><img src="../assets/img/projects/rubber-g08.webp" alt="Early prototype capture: the taxi sliding on a test map with trails of smoke behind the wheels" width="1100" height="619" loading="lazy"><figcaption>Early handling test — drift and tyre feedback on the prototype map.</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-g09.webp" alt="Early prototype capture: a damaged taxi with detached parts lying on the ground" width="1100" height="619" loading="lazy"><figcaption>Early destruction test — parts separated after impact.</figcaption></figure>
+            </div>
+            <div class="grid grid--2 mt-5">
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-FEEL-01</span>
+                <span class="ph__label">Feel, before / after</span>
+                <span class="ph__spec">Replace with: short clip of the same manoeuvre before and after a tuning pass, with optional telemetry (speed, steering, slip). Should make “handling read correctly at speed” observable rather than asserted.</span>
+                <span class="ph__file">expected: rubber-handling-before-after.gif / .mp4</span>
+              </div>
+              <div class="ph ph--16x9 reveal">
+                <span class="ph__id">RUB-FEEL-02</span>
+                <span class="ph__label">Impact feedback layers</span>
+                <span class="ph__spec">Replace with: frame-by-frame or layered capture of one crash — part separation, smoke, debris, camera response. Caption which layer is which; the point is how feedback sells the vehicle's weight.</span>
+                <span class="ph__file">expected: rubber-impact-layers.gif / .webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-section" id="result">
+            <h2>Result</h2>
+            <div class="metrics">
+              <div class="metric"><div class="metric__v">8</div><div class="metric__k">Students in the team</div></div>
+              <div class="metric"><div class="metric__v">9 months</div><div class="metric__k">From pitch to release</div></div>
+              <div class="metric"><div class="metric__v">6</div><div class="metric__k">Wheels on the custom rig</div></div>
+              <div class="metric"><div class="metric__v">35 → 4</div><div class="metric__k">Proposals pitched vs selected</div></div>
+            </div>
+            <div class="prose mt-5">
+              <p>The original concept was pitched to the class, selected for production, and carried through to a public release on itch.io. I led the team as technical director and de facto game director, and owned the vehicle experience end to end — programming, modelling, rigging, destruction and feedback — alongside the environment art and part of the mission programming.</p>
+            </div>
+            <div class="callout mt-5">
+              <span class="callout__k">Play it</span>
+              <p>The downloadable Windows build is on itch.io: <a href="https://lefran6.itch.io/rubber" rel="noopener" target="_blank">RUBBER by TECHREFT Studio</a>.</p>
+            </div>
+            <p class="cluster mt-5"><a class="btn btn--primary" href="https://lefran6.itch.io/rubber" rel="noopener" target="_blank">Try Rubber <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+          </div>
+
+        </div>
         <aside class="cs-aside">
           <div class="cs-aside__in">
             <h2>On this page</h2>
-            <ol><li><a href="#the-problem">The problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#result">Result</a></li></ol>
+            <ol>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#intention">The intention</a></li>
+              <li><a href="#programming">Programming — the vehicle</a></li>
+              <li><a href="#rig">A custom six-wheel rig</a></li>
+              <li><a href="#destruction">Modular destruction</a></li>
+              <li><a href="#vehicle-art">Vehicle art &amp; 3D</a></li>
+              <li><a href="#environment">Environment &amp; level art</a></li>
+              <li><a href="#missions">Missions, 3C &amp; QA</a></li>
+              <li><a href="#feedback">Feedback: tuning by feel</a></li>
+              <li><a href="#result">Result</a></li>
+            </ol>
             <p class="mt-5"><a class="btn btn--sm" href="../contact.html">Contact</a></p>
           </div>
         </aside>
@@ -142,50 +465,29 @@
 
   <section class="tight">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">Videos</span><h2>Prototype and highlights</h2></div>
-      <p class="lede" style="margin-bottom:16px">The prototype that got the project selected among 35 proposals, plus two gameplay highlights.</p>
-      <div class="reel reveal" style="position:relative;aspect-ratio:16/9;margin-top:24px;overflow:hidden">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/JweV7-lHMXk?autoplay=1&mute=1&rel=0&modestbranding=1" title="RUBBER prototype" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <div class="reel reveal" style="position:relative;aspect-ratio:16/9;margin-top:24px;overflow:hidden">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/rnjsMA0MVMk?autoplay=1&mute=1&rel=0&modestbranding=1" title="RUBBER highlight 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <div class="reel reveal" style="position:relative;aspect-ratio:16/9;margin-top:24px;overflow:hidden">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/0zKXsSzcoGE?autoplay=1&mute=1&rel=0&modestbranding=1" title="RUBBER highlight 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="sec-head"><span class="idx">Gallery</span><h2>Still frames from the project</h2><div class="sec-head__sub">Final city shots, the vehicle pipeline and the early prototype captures used while tuning the handling.</div></div>
+      <div class="gallery">
+        <figure class="shot"><img src="../assets/img/projects/rubber-g01.webp" alt="Night street in RUBBER with a neon HUD, traffic and the taxi leaving trails of smoke" width="1100" height="619" loading="lazy"><figcaption>In game — night driving, HUD, traffic and drift smoke.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g02.webp" alt="Wide night view of the futuristic city with dense signage, lit buildings and a large moon" width="1100" height="619" loading="lazy"><figcaption>The city — colour-blocked districts and signage at night.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g03.webp" alt="The yellow taxi seen from the front in a garage bay" width="1100" height="618" loading="lazy"><figcaption>The taxi — custom bodywork, lights and materials.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g04.webp" alt="Top-down layout in 3ds Max of the modular buildings, character, vehicles and props" width="1100" height="619" loading="lazy"><figcaption>The kit — buildings, character, vehicles and props on a shared grid.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g05.webp" alt="Blender viewport with the taxi and the vehicle rigging panel open" width="1100" height="664" loading="lazy"><figcaption>The rig — six wheel assignments in the Blender to Unreal setup.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g06.webp" alt="Wireframe view of the taxi with destruction target regions highlighted in red" width="1027" height="549" loading="lazy"><figcaption>Destruction — morph target regions in wireframe.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g07.webp" alt="Vertex-colour view of the taxi showing the mask separation for panel detachment" width="1025" height="548" loading="lazy"><figcaption>Destruction — vertex-colour separation mask.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g08.webp" alt="Early prototype capture of the taxi sliding with smoke trails" width="1100" height="619" loading="lazy"><figcaption>Prototype — drift and tyre feedback on the test map.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-g09.webp" alt="Early prototype capture of a damaged taxi with detached parts on the ground" width="1100" height="619" loading="lazy"><figcaption>Prototype — part separation after impact.</figcaption></figure>
+        <div class="ph ph--4x3 reveal">
+          <span class="ph__id">RUB-POST-01</span>
+          <span class="ph__label">Vertical A3 poster</span>
+          <span class="ph__spec">Replace with: the full vertical A3 poster (afficheverticaleA3bis.png). Show the whole composition — taxi, title, TECHREFT Studio credit and team names — at a readable size.</span>
+          <span class="ph__file">expected: afficheverticaleA3bis.png / .webp</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap">
-      <div class="sec-head"><span class="idx">Gallery</span>
-      
-<div class="gallery">
-       <figure class="shot"><img src="../assets/img/projects/rubber-g01.webp" alt="Driving at night down a neon street, HUD showing score and multiplier" width="1100" height="619" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g02.webp" alt="The retro-futuristic city: dense signage, wet asphalt and coloured lighting" width="1100" height="619" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g03.webp" alt="The taxi front-on in a garage bay, showing the custom body and lighting" width="1100" height="618" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g04.webp" alt="Top-down layout of the building kit in 3ds Max, props laid out by category" width="1100" height="619" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g05.webp" alt="The taxi in the 3ds Max viewport with the modifier stack open" width="1100" height="664" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g06.webp" alt="The vehicle in wireframe with Morpher targets highlighted for detachment" width="1027" height="549" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g07.webp" alt="The same vehicle in vertex colours, showing the mask separation used for destruction" width="1025" height="548" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g08.webp" alt="The car producing smoke as it slides, showing the feedback layer in motion" width="1100" height="619" loading="lazy"></figure>
-       <figure class="shot"><img src="../assets/img/projects/rubber-g09.webp" alt="The car mid-drift with debris lifting off the road surface" width="1100" height="619" loading="lazy"></figure>
-       </div>
-      </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <div class="cs-nav">
-        <a class="cs-nav__link" href="warno.html">
-          <span class="cs-nav__k">&larr; Previous</span>
-          <span class="cs-nav__t">WARNO</span>
-        </a>
-        <a class="cs-nav__link cs-nav__link--next" href="rally-project.html">
-          <span class="cs-nav__k">Next &rarr;</span>
-          <span class="cs-nav__t">Rally Project</span>
-        </a>
-      </div>
       <p class="mt-6"><a class="btn" href="../work.html">All work <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>
@@ -196,7 +498,7 @@
       <div>
         <h2 class="footer__h">Francisco De Carvalho Pereira</h2>
         <p class="muted" style="font-size:var(--t-sm);max-width:34ch">
-          Technical Artist — Tools & Pipeline. Real-time 3D, pipeline automation
+          Technical Artist — Tools &amp; Pipeline. Real-time 3D, pipeline automation
           and performance. Marseille, France.
         </p>
         <p class="mt-4">
@@ -212,13 +514,13 @@
           <li><a href="../about.html">About</a></li>
           <li><a href="../skills.html">Skills</a></li>
           <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../contact.html">Interactive CV</a></li>
+          <li><a href="../contact.html">Interactive resume</a></li>
         </ul>
       </div>
       <div>
         <h2 class="footer__h">Elsewhere</h2>
         <ul class="footer__list">
-          <li><a href="../assets/files/cv-francisco-de-carvalho-pereira.pdf" download>CV (PDF)</a></li>
+          <li><a href="../assets/files/cv-francisco-de-carvalho-pereira.pdf" download="resume-francisco-de-carvalho-pereira.pdf">Resume (PDF)</a></li>
           <li><a href="https://www.linkedin.com/in/franciscodecarvalhopereira/" rel="me noopener" target="_blank">LinkedIn</a></li>
           <li><a href="https://github.com/LeBoFran6" rel="me noopener" target="_blank">GitHub</a></li>
           <li><a href="https://www.artstation.com/lefran6" rel="me noopener" target="_blank">ArtStation</a></li>

@@ -1548,9 +1548,6 @@ figure figcaption {
   display: block;
   width: 100%;
   height: auto;
-  border: var(--bw) solid var(--border);
-  box-shadow: 6px 6px 0 var(--graphite);
-  background: var(--dark);
 }
 
 /* "No still" - an intentional, designed absence rather than a missing asset.

@@ -65,6 +65,8 @@ Each step assumes the previous one ran, and each one is idempotent.
 .\build\shot.ps1 -Pages @("index.html", "work.html")
 ```
 
-Writes PNGs to `%LOCALAPPDATA%\Temp\opencode\shots`. Note that headless Chrome
+Writes PNGs to `%LOCALAPPDATA%\Temp\opencode\shots`. The run uses its own
+`--user-data-dir`, so it never attaches to a Chrome window that is already open,
+and it only stops the process it started. Note that headless Chrome
 clamps the window to roughly 485 px wide, so `--window-size` below that is
 clipped in the output rather than actually emulating a narrower viewport.

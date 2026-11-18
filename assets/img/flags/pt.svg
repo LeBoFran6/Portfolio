@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" role="img" aria-label="Portugal">
+  <rect width="60" height="40" fill="#DA291C"/>
+  <rect width="24" height="40" fill="#046A38"/>
+  <circle cx="24" cy="20" r="7.6" fill="none" stroke="#FFE900" stroke-width="1.7"/>
+  <path d="M20.5 14.6h7v7.4a3.5 3.5 0 0 1-7 0z" fill="#fff" stroke="#DA291C" stroke-width="1.3"/>
+  <g fill="#003399">
+    <circle cx="22" cy="18.3" r="0.9"/>
+    <circle cx="26" cy="18.3" r="0.9"/>
+    <circle cx="24" cy="20.3" r="0.9"/>
+    <circle cx="22" cy="22.3" r="0.9"/>
+    <circle cx="26" cy="22.3" r="0.9"/>
+  </g>
+</svg>
