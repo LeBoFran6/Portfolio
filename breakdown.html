@@ -100,94 +100,104 @@
 </div>
       <p><a class="btn btn--sm" href="projects/rally-project.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-deterministic-materials">
+<article class="rd reveal" id="rd-blender-pipeline">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
-        <h3>Deterministic material regeneration</h3>
-        <span class="rd__tools">Blender · Python (bpy) · shader node graphs</span>
+        <h3>Automated Blender pipeline: deterministic materials + one-click batches</h3>
+        <span class="rd__tools">Blender · Python (bpy) · shader node graphs · Windows .bat · Alembic · Unity export</span>
       </div>
       <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>The first version patched hand-built shaders by writing hardcoded values into them. It worked until it silently did not: too fragile and unpredictable to trust.</dd></div>
-          <div><dt>What I did</dt><dd>Stopped patching and started regenerating. Every batch rebuilds the material graph from zero, so the shader graph is a build artefact rather than a hand-maintained file.</dd></div>
-          <div><dt>Result</dt><dd>Same input, same output, every run. Deterministic by design, which is the difference between a script that works on your machine and a tool a studio can rely on.</dd></div>
-          <div><dt>Next</dt><dd>A node-graph golden-image test per material would catch regressions automatically.</dd></div>
-        </dl>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Deterministic material regeneration</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>The first version patched hand-built shaders by writing hardcoded values into them. It worked until it silently did not: too fragile and unpredictable to trust.</dd></div>
+            <div><dt>What I did</dt><dd>Stopped patching and started regenerating. Every batch rebuilds the material graph from zero, so the shader graph is a build artefact rather than a hand-maintained file.</dd></div>
+            <div><dt>Result</dt><dd>Same input, same output, every run. Deterministic by design, which is the difference between a script that works on your machine and a tool a studio can rely on.</dd></div>
+            <div><dt>Next</dt><dd>A node-graph golden-image test per material would catch regressions automatically.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/material-regeneration-node-graph.webp" alt="Blender open with a geometry node graph and a Python console running the batch script" width="1056" height="454" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Headless Blender automation as an artist tool</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Every new skin and model was imported into Blender by hand, materials reassigned, then re-rendered: half a day of work, twice a week, and more when the team shipped a lot.</dd></div>
+            <div><dt>What I did</dt><dd>A self-contained automation pipeline behind one .bat: IMPORT_ABC -&gt; ASSIGN_MATERIAL -&gt; IMPORT_TEXTURES -&gt; RENDER (stills + sequence) -&gt; shared folder. Runs on any networked PC with Blender installed. No licensing, no server, no build step.</dd></div>
+            <div><dt>Result</dt><dd>Half a day per batch became one double-click. Roughly 1–2 days a week returned to the team, in continuous production use for seven months, run by the artists without an engineer.</dd></div>
+            <div><dt>Next</dt><dd>A queue with per-machine locking would let several artists batch at once without colliding.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/headless-blender-pipeline.webp" alt="A Windows file explorer window open on the render drop folder with the one-click batch file selected" width="1100" height="619" loading="lazy">
+        </div>
       </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/material-regeneration-node-graph.webp" alt="Blender open with a geometry node graph and a Python console running the batch script" width="1056" height="454" loading="lazy">
       <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-headless-blender">
+<article class="rd reveal" id="rd-lets-sing-tooling">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
-        <h3>Headless Blender automation as an artist tool</h3>
-        <span class="rd__tools">Blender · Python (bpy) · Windows .bat · Alembic · Unity export</span>
+        <h3>Unity tooling for animators: validation, draw calls and runtime gaze</h3>
+        <span class="rd__tools">Unity · C# (editor + runtime) · animation retargeting · LOD strategy · batching · profiling</span>
       </div>
       <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>Every new skin and model was imported into Blender by hand, materials reassigned, then re-rendered: half a day of work, twice a week, and more when the team shipped a lot.</dd></div>
-          <div><dt>What I did</dt><dd>A self-contained automation pipeline behind one .bat: IMPORT_ABC -&gt; ASSIGN_MATERIAL -&gt; IMPORT_TEXTURES -&gt; RENDER (stills + sequence) -&gt; shared folder. Runs on any networked PC with Blender installed. No licensing, no server, no build step.</dd></div>
-          <div><dt>Result</dt><dd>Half a day per batch became one double-click. Roughly 1–2 days a week returned to the team, in continuous production use for seven months, run by the artists without an engineer.</dd></div>
-          <div><dt>Next</dt><dd>A queue with per-machine locking would let several artists batch at once without colliding.</dd></div>
-        </dl>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Animation validation tool for animators</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Scale and transform errors in animation were invisible in the DCC and only surfaced after a developer round-trip, which put the fix days away from the person who could make it.</dd></div>
+            <div><dt>What I did</dt><dd>Animators drop clips into a folder, open a scene, and one click applies the animation to a test rig. Deliberately built to fit the animation team's existing workflow rather than forcing a change to it.</dd></div>
+            <div><dt>Result</dt><dd>Errors that previously surfaced after a developer round-trip are caught by the animator in seconds, on their own machine.</dd></div>
+            <div><dt>Next</dt><dd>A batch mode over a whole folder would turn it from a spot check into a gate.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/unity-animation-validation-tool.webp" alt="Blender viewport showing four rigged game characters assembled in one scene" width="962" height="511" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Draw call reduction across six console targets</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
+            <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
+            <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. [Placeholder — replace with measured draw-call reduction: before → after.]</dd></div>
+            <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="1100" height="619" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Runtime gaze decoupled from baked animation</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Characters had to react live to on-screen events while still playing authored performance animation, which baked eye and pupil work cannot do.</dd></div>
+            <div><dt>What I did</dt><dd>Separated eye and pupil control from the baked animation layer so the gaze is driven at runtime while the authored performance plays underneath.</dd></div>
+            <div><dt>Result</dt><dd>Live reactions without re-authoring a single performance clip.</dd></div>
+            <div><dt>Next</dt><dd>Blink and saccade timing driven by the same runtime layer for more life.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/runtime-gaze-system.webp" alt="Close-up of a rendered face mid-performance, showing decoupled eye and pupil control" width="1100" height="378" loading="lazy">
+        </div>
       </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/headless-blender-pipeline.webp" alt="A Windows file explorer window open on the render drop folder with the one-click batch file selected" width="1100" height="619" loading="lazy">
-      <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-<article class="rd reveal" id="rd-animation-validation">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Animation validation tool for animators</h3>
-        <span class="rd__tools">Unity · C# (editor + runtime) · animation retargeting</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>Scale and transform errors in animation were invisible in the DCC and only surfaced after a developer round-trip, which put the fix days away from the person who could make it.</dd></div>
-          <div><dt>What I did</dt><dd>Animators drop clips into a folder, open a scene, and one click applies the animation to a test rig. Deliberately built to fit the animation team's existing workflow rather than forcing a change to it.</dd></div>
-          <div><dt>Result</dt><dd>Errors that previously surfaced after a developer round-trip are caught by the animator in seconds, on their own machine.</dd></div>
-          <div><dt>Next</dt><dd>A batch mode over a whole folder would turn it from a spot check into a gate.</dd></div>
-        </dl>
-      </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/unity-animation-validation-tool.webp" alt="Blender viewport showing four rigged game characters assembled in one scene" width="962" height="511" loading="lazy">
       <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-chaos-vehicle">
+<article class="rd reveal" id="rd-rubber-systems">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
-        <h3>Six-wheel vehicle dynamics on Chaos Vehicle</h3>
-        <span class="rd__tools">Unreal Engine 5 · Chaos Vehicle · Blender (rig) · 3ds Max</span>
+        <h3>Chaos Vehicle systems: six-wheel dynamics and modular destruction</h3>
+        <span class="rd__tools">Unreal Engine 5 · Chaos Vehicle · Blender (rig) · 3ds Max · Morpher modifier</span>
       </div>
       <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>An arcade racer lives or dies on how the car feels, and the target was specific: heavy but fast, chaotic yet responsive. Six-wheel drive is a configuration the engine defaults do not cover, and the city was in constant redesign underneath the vehicle.</dd></div>
-          <div><dt>What I did</dt><dd>A complete dynamics model: mass distribution, torque curves, wheel friction, cornering stiffness and suspension spring rates, iterated against playtest feedback. Plus a custom 6-wheel rig in Blender for accurate per-wheel ground response, integrated into the engine's physics pipeline.</dd></div>
-          <div><dt>Result</dt><dd>Handling read correctly at speed and held its identity across repeated map redesigns rather than being re-derived each time.</dd></div>
-          <div><dt>Next</dt><dd>Telemetry-driven tuning passes instead of playtest-only iteration.</dd></div>
-        </dl>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Six-wheel vehicle dynamics on Chaos Vehicle</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>An arcade racer lives or dies on how the car feels, and the target was specific: heavy but fast, chaotic yet responsive. Six-wheel drive is a configuration the engine defaults do not cover, and the city was in constant redesign underneath the vehicle.</dd></div>
+            <div><dt>What I did</dt><dd>A complete dynamics model: mass distribution, torque curves, wheel friction, cornering stiffness and suspension spring rates, iterated against playtest feedback. Plus a custom 6-wheel rig in Blender for accurate per-wheel ground response, integrated into the engine's physics pipeline.</dd></div>
+            <div><dt>Result</dt><dd>Handling read correctly at speed and held its identity across repeated map redesigns rather than being re-derived each time.</dd></div>
+            <div><dt>Next</dt><dd>Telemetry-driven tuning passes instead of playtest-only iteration.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/chaos-vehicle-rig.webp" alt="The vehicle in wireframe with its custom six-wheel rig and suspension nodes visible" width="1027" height="549" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Modular destruction without physics debris</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Crash response had to read as real damage without the cost of a full physics-simulated debris system.</dd></div>
+            <div><dt>What I did</dt><dd>3ds Max Morpher driving authored part separation: bumper, hood and lights detach along authored morph targets driven by impact data.</dd></div>
+            <div><dt>Result</dt><dd>Damage reads at gameplay speed while staying inside the vehicle's frame budget.</dd></div>
+            <div><dt>Next</dt><dd>Damage state could drive material wear as well as geometry, in one pass.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/morpher-destruction.webp" alt="The vehicle in vertex colours showing the mask separation that drives panel detachment" width="1025" height="548" loading="lazy">
+        </div>
       </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/chaos-vehicle-rig.webp" alt="The vehicle in wireframe with its custom six-wheel rig and suspension nodes visible" width="1027" height="549" loading="lazy">
-      <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-<article class="rd reveal" id="rd-destruction">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Modular destruction without physics debris</h3>
-        <span class="rd__tools">3ds Max · Morpher modifier · Unreal Engine 5</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>Crash response had to read as real damage without the cost of a full physics-simulated debris system.</dd></div>
-          <div><dt>What I did</dt><dd>3ds Max Morpher driving authored part separation: bumper, hood and lights detach along authored morph targets driven by impact data.</dd></div>
-          <div><dt>Result</dt><dd>Damage reads at gameplay speed while staying inside the vehicle's frame budget.</dd></div>
-          <div><dt>Next</dt><dd>Damage state could drive material wear as well as geometry, in one pass.</dd></div>
-        </dl>
-      </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/morpher-destruction.webp" alt="The vehicle in vertex colours showing the mask separation that drives panel detachment" width="1025" height="548" loading="lazy">
       <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-world-machine">
@@ -208,24 +218,6 @@
 <img class="rd__shot" src="assets/img/breakdown/world-machine-node-graph.webp" alt="Three World Machine device graphs side by side: erosion, macro shape and detail passes" width="1100" height="537" loading="lazy">
       <p><a class="btn btn--sm" href="projects/environment-art.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-draw-calls">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Draw call reduction across six console targets</h3>
-        <span class="rd__tools">Unity · C# · LOD strategy · batching · profiling</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
-          <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
-          <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. [Placeholder — replace with measured draw-call reduction: before → after.]</dd></div>
-          <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
-        </dl>
-      </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="1100" height="619" loading="lazy">
-      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
 <article class="rd reveal" id="rd-ps1-budget">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
@@ -243,24 +235,6 @@
       
 <p class="rd__none">Screenshot withheld &mdash; the budget breakdown is available in the case study or on request.</p>
       <p><a class="btn btn--sm" href="projects/lastmeal.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-<article class="rd reveal" id="rd-gaze">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Runtime gaze decoupled from baked animation</h3>
-        <span class="rd__tools">Unity · C# · animation systems</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>Characters had to react live to on-screen events while still playing authored performance animation, which baked eye and pupil work cannot do.</dd></div>
-          <div><dt>What I did</dt><dd>Separated eye and pupil control from the baked animation layer so the gaze is driven at runtime while the authored performance plays underneath.</dd></div>
-          <div><dt>Result</dt><dd>Live reactions without re-authoring a single performance clip.</dd></div>
-          <div><dt>Next</dt><dd>Blink and saccade timing driven by the same runtime layer for more life.</dd></div>
-        </dl>
-      </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/runtime-gaze-system.webp" alt="Close-up of a rendered face mid-performance, showing decoupled eye and pupil control" width="1100" height="378" loading="lazy">
-      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
 <article class="rd reveal" id="rd-world-streaming">
       <div class="rd__head">
