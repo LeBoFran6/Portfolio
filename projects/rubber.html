@@ -49,6 +49,9 @@
   @media (min-width:760px){ .vars__row { grid-template-columns:190px 1fr; gap:18px; } }
 
   .media-note { margin-top:12px; font-family:var(--font-mono); font-size:12px; line-height:1.6; color:var(--dim); }
+
+  /* The Result band shows three metrics; keep them on one row of three. */
+  @media (min-width:560px){ .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 </style>
 </head>
 <body>
@@ -116,9 +119,9 @@
       <div class="facts">
         <div class="fact"><div class="fact__k">Role</div><div class="fact__v">Technical Direction / Vehicle Systems — plus programmer, environment artist and lighting artist</div></div>
         <div class="fact"><div class="fact__k">Studio</div><div class="fact__v">TECHREFT Studio · ESMA end-of-studies project</div></div>
-        <div class="fact"><div class="fact__k">Period</div><div class="fact__v">10/2022 – 06/2023 (9 months)</div></div>
+        <div class="fact"><div class="fact__k">Period</div><div class="fact__v">10/2022 – 06/2023 (6 months)</div></div>
         <div class="fact"><div class="fact__k">Team</div><div class="fact__v">8 students</div></div>
-        <div class="fact"><div class="fact__k">Scope</div><div class="fact__v">Vehicle dynamics · rigging · destruction · vehicle art · environment art · missions · QA</div></div>
+        <div class="fact"><div class="fact__k">Scope</div><div class="fact__v">Vehicle dynamics · rigging · destruction · vehicle art · environment art · fast pace openworld</div></div>
         <div class="fact"><div class="fact__k">Tools</div><div class="fact__v">Unreal Engine 5 · Chaos Vehicle · Nanite · Blender · 3ds Max · Substance Painter</div></div>
         <div class="fact"><div class="fact__k">Origin</div><div class="fact__v">Concept pitched to the class and selected for production — chosen among 35 proposals, of which only 4 were made</div></div>
         <div class="fact"><div class="fact__k">Release</div><div class="fact__v">Public Windows build on itch.io</div></div>
@@ -134,7 +137,7 @@
           <div class="cs-section" id="overview">
             <h2>Overview</h2>
             <div class="prose">
-              <p>RUBBER is the game idea I developed with eight students during the last year at ESMA. I pitched the original concept to the class, it was selected for production, and I led the project through to release. It is my most significant project to date: nine months, a full team, and a city that had to render as fast as the player could drive.</p>
+              <p>RUBBER is the game idea I developed with eight students during the last year at ESMA. I pitched the original concept to the class, it was selected for production, and I led the project through to release. It is my most significant project to date: six months, a full team, and a city that had to render as fast as the player could drive.</p>
               <p>My role covered technical direction across the team, the pipeline decisions, the public itch.io release page — and, at the other end of the scale, the individual parts of the taxi: programming, 3D design, rigging, destruction and the feedback loop that made the handling feel right.</p>
               <p class="muted">Feel free to explore the areas I worked on: <a href="#intention">the intention</a>, <a href="#programming">programming</a>, <a href="#rig">the six-wheel rig</a>, <a href="#destruction">destruction</a>, <a href="#vehicle-art">vehicle art</a>, <a href="#environment">environment art</a>, <a href="#missions">missions</a> and <a href="#feedback">feedback</a>.</p>
             </div>
@@ -166,11 +169,14 @@
               <div class="panel"><span class="label label--accent">02</span><h3>3D</h3><p>The taxi, the six-wheel rig, the Morpher destruction targets and the wider city asset kit.</p></div>
               <div class="panel"><span class="label label--accent">03</span><h3>Feedback</h3><p>Playtests, handling notes and visible impact response — the loop that decided when the car felt right.</p></div>
             </div>
-            <figure class="mt-5">
-              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
-                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/QdjywUnzvxY?autoplay=1&mute=1&rel=0&modestbranding=1" title="Stock template vs final arcade feel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-              </div>
-            </figure>
+            <div class="grid grid--2 mt-5">
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/FrKS7JlzNt4?autoplay=1&mute=1&rel=0&modestbranding=1" title="Stock template vs final arcade feel — part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/L88lG_CuH2M?autoplay=1&mute=1&rel=0&modestbranding=1" title="Stock template vs final arcade feel — part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
+            </div>
           </div>
 
           <div class="cs-section" id="programming">
@@ -188,26 +194,15 @@
               <div class="vars__row"><span class="vars__k">Springs</span><span class="vars__v">Suspension spring rates — body movement, stability and per-wheel ground contact.</span></div>
             </div>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-TUNE-01</span>
-                <span class="ph__label">Chaos Vehicle setup</span>
-                <span class="ph__spec">Replace with: full Details-panel capture of the final Chaos Vehicle setup — mass, centre of mass, torque curve and RPM range. Use the shipped values, not a default preset, so the tuning story is legible.</span>
-                <span class="ph__file">expected: rubber-chaos-setup.png / .webp</span>
-              </div>
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-TUNE-02</span>
-                <span class="ph__label">Wheel &amp; suspension values</span>
-                <span class="ph__spec">Replace with: wheel setup capture showing friction, cornering stiffness and spring rates per wheel. Ideal as a front/rear comparison that explains the six-wheel behaviour.</span>
-                <span class="ph__file">expected: rubber-wheel-tuning.png / .webp</span>
-              </div>
+              <figure class="shot"><img src="../assets/img/projects/rubber-chaos-setup.webp" alt="Chaos Vehicle setup — mass, centre of mass, torque curve and RPM range" width="741" height="914" loading="lazy"><figcaption>Chaos Vehicle setup</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-wheel-tuning.webp" alt="Wheel and suspension values — friction, cornering stiffness and spring rates per wheel" width="1100" height="486" loading="lazy"><figcaption>Wheel &amp; suspension values</figcaption></figure>
             </div>
-            <div class="ph ph--16x9 mt-4 reveal">
-              <span class="ph__id">RUB-TUNE-03</span>
-              <span class="ph__label">Iteration history — before / after</span>
-              <span class="ph__spec">Replace with: a small comparison sheet (3–4 passes) or a graph of parameter changes against playtest notes. Should show that the final numbers came from feedback and map redesigns, not from a single guess.</span>
-              <span class="ph__file">expected: rubber-tuning-passes.webp / .gif</span>
-            </div>
-            <p class="media-note">Source images mentioned for this section: <span class="mono">vvvv.png · vvvvvvvvvvvvvvvvvvvvv.png · VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV.png · vvvvvvvvvvvv.png · v.png · vvvvvvv.png · vvv.png</span> — these are the Chaos panel captures to drop into the three slots above.</p>
+            <figure class="mt-5">
+              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/QdjywUnzvxY?autoplay=1&mute=1&rel=0&modestbranding=1" title="Iteration history — before / after" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>Iteration history — before / after.</figcaption>
+            </figure>
           </div>
 
           <div class="cs-section" id="rig">
@@ -220,18 +215,10 @@
               <figcaption>Blender → Unreal: the vehicle rigging setup with the six wheel assignments (two front, four rear).</figcaption>
             </figure>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-RIG-01</span>
-                <span class="ph__label">Blender rig — bones &amp; naming</span>
-                <span class="ph__spec">Replace with: clean viewport capture of the six-wheel skeleton, wheel bone names and constraints, ideally with a top-view diagram of wheel positions. This is the proof of the custom rig, not a beauty render.</span>
-                <span class="ph__file">expected: rubber-6wheel-rig.png / .webp</span>
-              </div>
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-RIG-02</span>
-                <span class="ph__label">Per-wheel response in engine</span>
-                <span class="ph__spec">Replace with: in-engine debug view (suspension traces / wheel contact) with the car crossing bumps or a kerb. Should show each wheel loading independently in the shipped physics pipeline.</span>
-                <span class="ph__file">expected: rubber-wheel-ground-response.gif / .mp4</span>
-              </div>
+              <figure class="shot"><img src="../assets/img/projects/rubber-6wheel-rig.webp" alt="Blender rig — bones and naming for the six-wheel skeleton" width="795" height="550" loading="lazy"><figcaption>Blender rig — bones &amp; naming</figcaption></figure>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/0zKXsSzcoGE?autoplay=1&mute=1&rel=0&modestbranding=1" title="Per-wheel response in engine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
             </div>
             <figure class="mt-5">
               <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
@@ -248,7 +235,7 @@
             </div>
             <div class="grid grid--2 mt-5">
               <figure class="shot"><img src="../assets/img/projects/rubber-g06.webp" alt="Wireframe view of the taxi with the destruction target regions highlighted in red" width="1027" height="549" loading="lazy"><figcaption>Wireframe view — the morph target regions mapped on the body.</figcaption></figure>
-              <figure class="shot"><img src="../assets/img/projects/rubber-g07.webp" alt="Vertex-colour view of the taxi showing the mask separation used to drive panel detachment" width="1025" height="548" loading="lazy"><figcaption>Vertex-colour mask — the separation that drives panel detachment.</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-vertex-mask.webp" alt="Vertex-colour view of the taxi showing the mask separation used to drive panel detachment" width="861" height="526" loading="lazy"><figcaption>Vertex-colour mask — the separation that drives panel detachment.</figcaption></figure>
             </div>
             <figure class="mt-5">
               <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
@@ -257,18 +244,12 @@
               <figcaption>“Rubber Car Destructions — BlendShapes” — the morph-driven part separation in motion.</figcaption>
             </figure>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-DEST-01</span>
-                <span class="ph__label">Impact sequence</span>
-                <span class="ph__spec">Replace with: short GIF or video of an impact in engine — bumper, hood and lights separating over successive frames. One clean hit is enough; it should read as authored part separation, not generic deformation.</span>
-                <span class="ph__file">expected: rubber-destruction-impact.gif / .mp4</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-DEST-02</span>
-                <span class="ph__label">Morpher target setup</span>
-                <span class="ph__spec">Replace with: 3ds Max capture of the Morpher modifier and its target list, with slider values or the target meshes visible. Explains how one impact input drives several independent panels.</span>
-                <span class="ph__file">expected: rubber-3dsmax-morpher.png / .webp</span>
-              </div>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/ngHJbWV--YM?autoplay=1&mute=1&rel=0&modestbranding=1" title="Impact sequence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/rnjsMA0MVMk?autoplay=1&mute=1&rel=0&modestbranding=1" title="Morpher target setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
             </div>
           </div>
 
@@ -283,30 +264,10 @@
               <figcaption>The taxi in the garage bay — custom body, lights and materials.</figcaption>
             </figure>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-3D-01</span>
-                <span class="ph__label">High-poly → Nanite mesh</span>
-                <span class="ph__spec">Replace with: 3ds Max viewport of the taxi (wireframe or turntable) with the high-poly panels visible, plus the in-engine Nanite mesh statistics. The point is that the detailed source survives into the engine.</span>
-                <span class="ph__file">expected: rubber-taxi-nanite.png / .gif</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-3D-02</span>
-                <span class="ph__label">Materials &amp; UVs</span>
-                <span class="ph__spec">Replace with: Substance Painter capture of the taxi texture sets — paint, wear, decals, lights — or a UV layout. Should show how the visual identity of the taxi was authored.</span>
-                <span class="ph__file">expected: rubber-taxi-texturing.png / .webp</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-3D-03</span>
-                <span class="ph__label">Nanite in engine</span>
-                <span class="ph__spec">Replace with: engine-side capture of the Nanite visualisation or triangle-count/stat panel on the taxi, to make the high-poly workflow claim concrete.</span>
-                <span class="ph__file">expected: rubber-nanite-stats.png / .webp</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-3D-04</span>
-                <span class="ph__label">Character &amp; city props</span>
-                <span class="ph__spec">Replace with: contact sheet of the other meshes I modelled — the main character and a selection of city props — shown together at a readable scale.</span>
-                <span class="ph__file">expected: rubber-character-props.webp</span>
-              </div>
+              <figure class="shot"><img src="../assets/img/projects/rubber-taxi-nanite.webp" alt="High-poly to Nanite mesh — the taxi with its detailed panels" width="690" height="479" loading="lazy"><figcaption>High-poly → Nanite mesh</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-taxi-texturing.webp" alt="Materials and UVs — the taxi texture sets" width="899" height="618" loading="lazy"><figcaption>Materials &amp; UVs</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-nanite-stats.webp" alt="Nanite in engine — triangle count and stats on the taxi" width="1025" height="1025" loading="lazy"><figcaption>Nanite in engine</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-character-props.webp" alt="Character and city props — contact sheet of the modelled meshes" width="1100" height="555" loading="lazy"><figcaption>Character &amp; city props</figcaption></figure>
             </div>
           </div>
 
@@ -333,37 +294,17 @@
               <figure class="shot"><img src="../assets/img/projects/rubber-g04.webp" alt="Top-down layout in 3ds Max showing the modular buildings, player character, vehicles and props laid out by category" width="1100" height="619" loading="lazy"><figcaption>The modular kit laid out in 3ds Max: buildings, character, vehicles and props.</figcaption></figure>
             </div>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-ENV-01</span>
-                <span class="ph__label">Blockout → final</span>
-                <span class="ph__spec">Replace with: the same camera position in one district, first as the reference-based blockout and then finished. Shows the navigation and composition decisions before the props went in.</span>
-                <span class="ph__file">expected: rubber-blockout-vs-final.webp</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-ENV-02</span>
-                <span class="ph__label">District colour script</span>
-                <span class="ph__spec">Replace with: 3–4 stills of the districts side by side, each labelled with its intended colour and ambience. Should make the “each district has its own mood” decision visible.</span>
-                <span class="ph__file">expected: rubber-districts.webp</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-ENV-03</span>
-                <span class="ph__label">One kit, many variations</span>
-                <span class="ph__spec">Replace with: inventory shot of the modular building pieces and prop families on a grid, ideally with a few finished façades built from them. The point is diversity from a limited asset set.</span>
-                <span class="ph__file">expected: rubber-modular-kit.webp</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-ENV-04</span>
-                <span class="ph__label">Ads, holograms &amp; wayfinding</span>
-                <span class="ph__spec">Replace with: gameplay still of a street where ads, holograms, props and traffic guide the route — ideally annotated with the reading direction. Show the city doing navigation work.</span>
-                <span class="ph__file">expected: rubber-wayfinding.png / .webp</span>
-              </div>
+              <figure class="shot"><img src="../assets/img/projects/rubber-blockout-vs-final.webp" alt="Blockout to final — the same camera position in one district" width="1073" height="699" loading="lazy"><figcaption>Blockout → final</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-districts.webp" alt="District colour script — stills of the districts side by side" width="1100" height="913" loading="lazy"><figcaption>District colour script</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-modular-kit.webp" alt="One kit, many variations — the modular building pieces and prop families" width="512" height="430" loading="lazy"><figcaption>One kit, many variations</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-wayfinding.webp" alt="Ads, holograms and wayfinding — the street guiding the route" width="862" height="956" loading="lazy"><figcaption>Ads, holograms &amp; wayfinding</figcaption></figure>
             </div>
-            <div class="ph ph--16x9 mt-4 reveal">
-              <span class="ph__id">RUB-ENV-05</span>
-              <span class="ph__label">Opening — tutorial to “wow”</span>
-              <span class="ph__spec">Replace with: video or storyboard of the opening beats, from the first tutorial instruction through to the reveal of the city. Should show why it stayed in the game as storytelling and rhythm, not just instruction.</span>
-              <span class="ph__file">expected: rubber-opening-sequence.gif / .mp4</span>
-            </div>
+            <figure class="mt-5">
+              <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/Bay4Y-gmOsA?autoplay=1&mute=1&rel=0&modestbranding=1" title="Opening — tutorial to “wow”" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>Opening — tutorial to “wow”.</figcaption>
+            </figure>
             <p class="media-note">Longer version on the original page: <a href="https://fran6pereira.wixsite.com/portfolio-francisco/copie-de-environement" rel="noopener" target="_blank">Environment Art — RUBBER portfolio (Wix)</a>.</p>
           </div>
 
@@ -374,24 +315,9 @@
               <p>The missions were not separate from the driving: they were the structure that made the city legible and gave the handling somewhere to go. Designing a quest, building it, then playing it until the edge cases were gone was one continuous loop.</p>
             </div>
             <div class="grid grid--3 mt-5">
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-CODE-01</span>
-                <span class="ph__label">Quest design → build</span>
-                <span class="ph__spec">Replace with: a mission graph or flow diagram next to the corresponding Blueprint/Unreal implementation. One representative quest is enough to show design-to-code ownership.</span>
-                <span class="ph__file">expected: rubber-mission-graph.png / .webp</span>
-              </div>
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-CODE-02</span>
-                <span class="ph__label">Vehicle / 3C</span>
-                <span class="ph__spec">Replace with: Blueprint or code capture of the vehicle and 3C setup — camera behaviour, input/control handling and the link to the Chaos vehicle. Prefer one readable graph over several small ones.</span>
-                <span class="ph__file">expected: rubber-vehicle-3c.png / .webp</span>
-              </div>
-              <div class="ph ph--4x3 reveal">
-                <span class="ph__id">RUB-CODE-03</span>
-                <span class="ph__label">QA pass</span>
-                <span class="ph__spec">Replace with: a mission QA checklist, bug list or before/after fix capture. Should show that quests were tested and corrected, not only implemented.</span>
-                <span class="ph__file">expected: rubber-mission-qa.png / .webp</span>
-              </div>
+              <figure class="shot"><img src="../assets/img/projects/rubber-mission-graph.webp" alt="Quest design to build — mission graph and implementation" width="1074" height="459" loading="lazy"><figcaption>Quest design → build</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-vehicle-3c.webp" alt="Vehicle and 3C — camera behaviour, input and the link to the Chaos vehicle" width="1100" height="850" loading="lazy"><figcaption>Vehicle / 3C</figcaption></figure>
+              <figure class="shot"><img src="../assets/img/projects/rubber-mission-qa.webp" alt="QA pass — mission checklist and fixes" width="864" height="487" loading="lazy"><figcaption>QA pass</figcaption></figure>
             </div>
           </div>
 
@@ -406,18 +332,12 @@
               <figure class="shot"><img src="../assets/img/projects/rubber-g09.webp" alt="Early prototype capture: a damaged taxi with detached parts lying on the ground" width="1100" height="619" loading="lazy"><figcaption>Early destruction test — parts separated after impact.</figcaption></figure>
             </div>
             <div class="grid grid--2 mt-5">
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-FEEL-01</span>
-                <span class="ph__label">Feel, before / after</span>
-                <span class="ph__spec">Replace with: short clip of the same manoeuvre before and after a tuning pass, with optional telemetry (speed, steering, slip). Should make “handling read correctly at speed” observable rather than asserted.</span>
-                <span class="ph__file">expected: rubber-handling-before-after.gif / .mp4</span>
-              </div>
-              <div class="ph ph--16x9 reveal">
-                <span class="ph__id">RUB-FEEL-02</span>
-                <span class="ph__label">Impact feedback layers</span>
-                <span class="ph__spec">Replace with: frame-by-frame or layered capture of one crash — part separation, smoke, debris, camera response. Caption which layer is which; the point is how feedback sells the vehicle's weight.</span>
-                <span class="ph__file">expected: rubber-impact-layers.gif / .webp</span>
-              </div>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/M4j0p6c3IDU?autoplay=1&mute=1&rel=0&modestbranding=1" title="Feel, before / after" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
+              <figure class="shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/qbGyXtPCSy4?autoplay=1&mute=1&rel=0&modestbranding=1" title="Impact feedback layers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </figure>
             </div>
           </div>
 
@@ -425,8 +345,7 @@
             <h2>Result</h2>
             <div class="metrics">
               <div class="metric"><div class="metric__v">8</div><div class="metric__k">Students in the team</div></div>
-              <div class="metric"><div class="metric__v">9 months</div><div class="metric__k">From pitch to release</div></div>
-              <div class="metric"><div class="metric__v">6</div><div class="metric__k">Wheels on the custom rig</div></div>
+              <div class="metric"><div class="metric__v">6 months</div><div class="metric__k">From pitch to release</div></div>
               <div class="metric"><div class="metric__v">35 → 4</div><div class="metric__k">Proposals pitched vs selected</div></div>
             </div>
             <div class="prose mt-5">
@@ -464,6 +383,17 @@
 
   <section class="tight">
     <div class="wrap">
+      <figure>
+        <div class="reel reveal" style="position:relative;aspect-ratio:16/9;overflow:hidden">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/JweV7-lHMXk?autoplay=1&mute=1&rel=0&modestbranding=1" title="HOLY TAXI! — the prototype presented to the jury" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <figcaption>“HOLY TAXI!” — the prototype presented to the jury that took RUBBER from proposal to production.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
       <div class="sec-head"><span class="idx">Gallery</span><h2>Still frames from the project</h2><div class="sec-head__sub">Final city shots, the vehicle pipeline and the early prototype captures used while tuning the handling.</div></div>
       <div class="gallery">
         <figure class="shot"><img src="../assets/img/projects/rubber-g01.webp" alt="Night street in RUBBER with a neon HUD, traffic and the taxi leaving trails of smoke" width="1100" height="619" loading="lazy"><figcaption>In game — night driving, HUD, traffic and drift smoke.</figcaption></figure>
@@ -475,12 +405,60 @@
         <figure class="shot"><img src="../assets/img/projects/rubber-g07.webp" alt="Vertex-colour view of the taxi showing the mask separation for panel detachment" width="1025" height="548" loading="lazy"><figcaption>Destruction — vertex-colour separation mask.</figcaption></figure>
         <figure class="shot"><img src="../assets/img/projects/rubber-g08.webp" alt="Early prototype capture of the taxi sliding with smoke trails" width="1100" height="619" loading="lazy"><figcaption>Prototype — drift and tyre feedback on the test map.</figcaption></figure>
         <figure class="shot"><img src="../assets/img/projects/rubber-g09.webp" alt="Early prototype capture of a damaged taxi with detached parts on the ground" width="1100" height="619" loading="lazy"><figcaption>Prototype — part separation after impact.</figcaption></figure>
-        <div class="ph ph--4x3 reveal">
-          <span class="ph__id">RUB-POST-01</span>
-          <span class="ph__label">Vertical A3 poster</span>
-          <span class="ph__spec">Replace with: the full vertical A3 poster (afficheverticaleA3bis.png). Show the whole composition — taxi, title, TECHREFT Studio credit and team names — at a readable size.</span>
-          <span class="ph__file">expected: afficheverticaleA3bis.png / .webp</span>
-        </div>
+        <figure class="shot"><img src="../assets/img/projects/rubber-poster.webp" alt="Vertical A3 poster — taxi, title, TECHREFT Studio credit and team names" width="800" height="1200" loading="lazy"><figcaption>Vertical A3 poster.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-03d4275b.webp" alt="RUBBER gallery image" width="1100" height="535" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-04427284.webp" alt="RUBBER gallery image" width="512" height="335" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-0863fdc6.webp" alt="RUBBER gallery image" width="1100" height="521" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-086dfc7e.webp" alt="RUBBER gallery image" width="949" height="498" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-0bca1025.webp" alt="RUBBER gallery image" width="816" height="493" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-0bcd5a90.webp" alt="RUBBER gallery image" width="376" height="206" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-0f296d94.webp" alt="RUBBER gallery image" width="925" height="553" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-1347ed4f.webp" alt="RUBBER gallery image" width="1100" height="934" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-19aba24c.webp" alt="RUBBER gallery image" width="614" height="465" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-219778d4.webp" alt="RUBBER gallery image" width="439" height="464" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-2e49fa15.webp" alt="RUBBER gallery image" width="1100" height="864" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-2e5ca969.webp" alt="RUBBER gallery image" width="756" height="450" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-361cda2d.webp" alt="RUBBER gallery image" width="856" height="326" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-37e71410.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-3c95baca.webp" alt="RUBBER gallery image" width="778" height="451" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-3f8101fa.webp" alt="RUBBER gallery image" width="512" height="335" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-4170cef7.webp" alt="RUBBER gallery image" width="785" height="353" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-4867fc5b.webp" alt="RUBBER gallery image" width="1002" height="522" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-487d7edd.webp" alt="RUBBER gallery image" width="756" height="436" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-5270f978.webp" alt="RUBBER gallery image" width="788" height="532" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-543953aa.webp" alt="RUBBER gallery image" width="516" height="511" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-5a51ee28.webp" alt="RUBBER gallery image" width="657" height="481" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-66e7d549.webp" alt="RUBBER gallery image" width="512" height="482" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-6bfeb4aa.webp" alt="RUBBER gallery image" width="1025" height="1025" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-6f3913ab.webp" alt="RUBBER gallery image" width="695" height="363" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-71c1c2d5.webp" alt="RUBBER gallery image" width="512" height="384" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-795a286c.webp" alt="RUBBER gallery image" width="1100" height="481" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-7b387f63.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-7b585c96.webp" alt="RUBBER gallery image" width="1065" height="733" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-7c4e336d.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-87873e3c.webp" alt="RUBBER gallery image" width="1064" height="750" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-886d1429.webp" alt="RUBBER gallery image" width="799" height="573" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-93828db7.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-94bd26fa.webp" alt="RUBBER gallery image" width="795" height="550" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-960c04b1.webp" alt="RUBBER gallery image" width="512" height="315" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-987a9d3c.webp" alt="RUBBER gallery image" width="512" height="430" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-99365a67.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-9ec0c5a0.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-a0c2e21b.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-a15bb5ef.webp" alt="RUBBER gallery image" width="1100" height="462" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-a2a26cab.webp" alt="RUBBER gallery image" width="754" height="557" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-a82e706c.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-afdbd9d5.webp" alt="RUBBER gallery image" width="512" height="482" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-b12fa717.webp" alt="RUBBER gallery image" width="592" height="406" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-c56e2e4e.webp" alt="RUBBER gallery image" width="688" height="556" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-d772ae98.webp" alt="RUBBER gallery image" width="1100" height="948" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-d7c5cc5f.webp" alt="RUBBER gallery image" width="980" height="543" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-da7d315c.webp" alt="RUBBER gallery image" width="1100" height="619" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-dc825537.webp" alt="RUBBER gallery image" width="1100" height="591" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-e48c64ce.webp" alt="RUBBER gallery image" width="1080" height="536" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-f291cb93.webp" alt="RUBBER gallery image" width="686" height="374" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-f2e7b639.webp" alt="RUBBER gallery image" width="874" height="432" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/projects/rubber-nf-fb790e5b.webp" alt="RUBBER gallery image" width="800" height="1360" loading="lazy"></figure>
       </div>
     </div>
   </section>
