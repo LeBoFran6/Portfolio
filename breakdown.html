@@ -80,7 +80,7 @@
 
   <section>
     <div class="wrap">
-      <div class="rd-grid"><article class="rd reveal" id="rd-scene-capture">
+      <div class="rd-grid"><div class="rd-col"><article class="rd reveal" id="rd-scene-capture">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
         <h3>Multi-view instrumentation with Scene Capture 2D</h3>
@@ -100,6 +100,86 @@
 </div>
       <p><a class="btn btn--sm" href="projects/rally-project.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
+<article class="rd reveal" id="rd-ps1-budget">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Designing to 2 MB of RAM and 1 MB of VRAM</h3>
+        <span class="rd__tools">Unity · SplashEdit · PSXSplash · Lua · original PS1 hardware</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>A fishing game on real 1994 hardware: 33 MHz, 2 MB system RAM, 1 MB VRAM. The toolchain compiles, packs VRAM and builds the disc image. What no toolchain decides for you is what fits.</dd></div>
+          <div><dt>What I did</dt><dd>Budgeted every scene to the hardware up front, choosing what each scene could afford rather than optimising after the fact, and treated the constraints as design input.</dd></div>
+          <div><dt>Result</dt><dd>A stable 30 fps on original hardware, shipped as a genuine PS1-compatible disc image.</dd></div>
+          <div><dt>Next</dt><dd>A per-scene VRAM ledger checked into the repo so the budget is visible before art lands.</dd></div>
+        </dl>
+      </div>
+      
+<div class="rd__shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/QIEnbxwrGg0?autoplay=1&mute=1&rel=0&modestbranding=1" title="LastMeal — demo on real PS1 hardware" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+      <p><a class="btn btn--sm" href="projects/lastmeal.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-lets-sing-tooling">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Unity tooling for animators: validation, draw calls and runtime gaze</h3>
+        <span class="rd__tools">Unity · C# (editor + runtime) · animation retargeting · LOD strategy · batching · profiling</span>
+      </div>
+      <div class="rd__body">
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Animation validation tool for animators</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Scale and transform errors in animation were invisible in the DCC and only surfaced after a developer round-trip, which put the fix days away from the person who could make it.</dd></div>
+            <div><dt>What I did</dt><dd>Animators drop clips into a folder, open a scene, and one click applies the animation to a test rig. Deliberately built to fit the animation team's existing workflow rather than forcing a change to it.</dd></div>
+            <div><dt>Result</dt><dd>Errors that previously surfaced after a developer round-trip are caught by the animator in seconds, on their own machine.</dd></div>
+            <div><dt>Next</dt><dd>A batch mode over a whole folder would turn it from a spot check into a gate.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/unity-animation-validation-tool.webp" alt="An animated karaoke character mid-performance with a microphone, lit against a stage gradient" width="1100" height="619" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Draw call reduction across six console targets</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
+            <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
+            <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. [Placeholder — replace with measured draw-call reduction: before → after.]</dd></div>
+            <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="302" height="167" loading="lazy">
+        </div>
+        <div class="rd__sys">
+          <h4 class="rd__sys__h">Runtime gaze decoupled from baked animation</h4>
+          <dl>
+            <div><dt>Problem</dt><dd>Characters had to react live to on-screen events while still playing authored performance animation, which baked eye and pupil work cannot do.</dd></div>
+            <div><dt>What I did</dt><dd>Separated eye and pupil control from the baked animation layer so the gaze is driven at runtime while the authored performance plays underneath.</dd></div>
+            <div><dt>Result</dt><dd>Live reactions without re-authoring a single performance clip.</dd></div>
+            <div><dt>Next</dt><dd>Blink and saccade timing driven by the same runtime layer for more life.</dd></div>
+          </dl>
+          <img class="rd__shot" src="assets/img/breakdown/runtime-gaze-system.webp" alt="Close-up of a rendered face mid-performance, showing decoupled eye and pupil control" width="1100" height="619" loading="lazy">
+        </div>
+      </div>
+      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+<article class="rd reveal" id="rd-world-streaming">
+      <div class="rd__head">
+        <span class="label label--accent">R&amp;D</span>
+        <h3>Large-scale world streaming on a proprietary engine</h3>
+        <span class="rd__tools">Eugen Systems in-house engine · World Machine · modular kits</span>
+      </div>
+      <div class="rd__body">
+        <dl>
+          <div><dt>Problem</dt><dd>Maps are built to real-world scale and must read like satellite imagery while streaming continuously, holding up from a whole city block down to a single street.</dd></div>
+          <div><dt>What I did</dt><dd>Owned a complete production map end to end: layout, terrain, environment data, final optimisation. Assembled and maintained four modular environment kits, each covering a distinct region and enforcing consistent real-world scale across the whole map.</dd></div>
+          <div><dt>Result</dt><dd>Map weight reduced and visual problems from large-scale QA pass fixed, while the world keeps loading around the player.</dd></div>
+          <div><dt>Next</dt><dd>Streaming cost visualised per sector would make the trade-offs reviewable with design.</dd></div>
+        </dl>
+      </div>
+      
+<img class="rd__shot" src="assets/img/breakdown/world-streaming-sectors.webp" alt="Aerial view of a lake and forest crossing in a large-scale streamed world" width="1100" height="618" loading="lazy">
+      <p><a class="btn btn--sm" href="projects/warno.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+        </div>
+        <div class="rd-col">
 <article class="rd reveal" id="rd-blender-pipeline">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
@@ -130,46 +210,6 @@
       </div>
       <p><a class="btn btn--sm" href="projects/automated-blender-render-pipeline.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-lets-sing-tooling">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Unity tooling for animators: validation, draw calls and runtime gaze</h3>
-        <span class="rd__tools">Unity · C# (editor + runtime) · animation retargeting · LOD strategy · batching · profiling</span>
-      </div>
-      <div class="rd__body">
-        <div class="rd__sys">
-          <h4 class="rd__sys__h">Animation validation tool for animators</h4>
-          <dl>
-            <div><dt>Problem</dt><dd>Scale and transform errors in animation were invisible in the DCC and only surfaced after a developer round-trip, which put the fix days away from the person who could make it.</dd></div>
-            <div><dt>What I did</dt><dd>Animators drop clips into a folder, open a scene, and one click applies the animation to a test rig. Deliberately built to fit the animation team's existing workflow rather than forcing a change to it.</dd></div>
-            <div><dt>Result</dt><dd>Errors that previously surfaced after a developer round-trip are caught by the animator in seconds, on their own machine.</dd></div>
-            <div><dt>Next</dt><dd>A batch mode over a whole folder would turn it from a spot check into a gate.</dd></div>
-          </dl>
-          <img class="rd__shot" src="assets/img/breakdown/unity-animation-validation-tool.webp" alt="Blender viewport showing four rigged game characters assembled in one scene" width="962" height="511" loading="lazy">
-        </div>
-        <div class="rd__sys">
-          <h4 class="rd__sys__h">Draw call reduction across six console targets</h4>
-          <dl>
-            <div><dt>Problem</dt><dd>One asset set had to hold a single art direction across PS4, PS5, Xbox Series X|S, Xbox One, Switch and Switch 2, whose runtime budgets share almost nothing.</dd></div>
-            <div><dt>What I did</dt><dd>LOD strategies and batching to cut draw calls, holding visual targets across a wide performance spread, plus real-time rendering R&amp;D (glow, bloom, VFX) inside fixed frame budgets.</dd></div>
-            <div><dt>Result</dt><dd>Six console targets held to one visual bar from a single asset set. [Placeholder — replace with measured draw-call reduction: before → after.]</dd></div>
-            <div><dt>Next</dt><dd>Automated per-target budget reporting in CI would catch drift before a console build.</dd></div>
-          </dl>
-          <img class="rd__shot" src="assets/img/breakdown/draw-call-profiler.webp" alt="In-engine editor view of a production map with region selection and navigation overlays" width="1100" height="619" loading="lazy">
-        </div>
-        <div class="rd__sys">
-          <h4 class="rd__sys__h">Runtime gaze decoupled from baked animation</h4>
-          <dl>
-            <div><dt>Problem</dt><dd>Characters had to react live to on-screen events while still playing authored performance animation, which baked eye and pupil work cannot do.</dd></div>
-            <div><dt>What I did</dt><dd>Separated eye and pupil control from the baked animation layer so the gaze is driven at runtime while the authored performance plays underneath.</dd></div>
-            <div><dt>Result</dt><dd>Live reactions without re-authoring a single performance clip.</dd></div>
-            <div><dt>Next</dt><dd>Blink and saccade timing driven by the same runtime layer for more life.</dd></div>
-          </dl>
-          <img class="rd__shot" src="assets/img/breakdown/runtime-gaze-system.webp" alt="Close-up of a rendered face mid-performance, showing decoupled eye and pupil control" width="1100" height="378" loading="lazy">
-        </div>
-      </div>
-      <p><a class="btn btn--sm" href="projects/lets-sing-voxler.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
 <article class="rd reveal" id="rd-rubber-systems">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
@@ -185,7 +225,9 @@
             <div><dt>Result</dt><dd>Handling read correctly at speed and held its identity across repeated map redesigns rather than being re-derived each time.</dd></div>
             <div><dt>Next</dt><dd>Telemetry-driven tuning passes instead of playtest-only iteration.</dd></div>
           </dl>
-          <img class="rd__shot" src="assets/img/breakdown/chaos-vehicle-rig.webp" alt="The vehicle in wireframe with its custom six-wheel rig and suspension nodes visible" width="1027" height="549" loading="lazy">
+          <div class="rd__shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/0zKXsSzcoGE?autoplay=1&mute=1&rel=0&modestbranding=1" title="Six-wheel vehicle dynamics on Chaos Vehicle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
         </div>
         <div class="rd__sys">
           <h4 class="rd__sys__h">Modular destruction without physics debris</h4>
@@ -195,7 +237,9 @@
             <div><dt>Result</dt><dd>Damage reads at gameplay speed while staying inside the vehicle's frame budget.</dd></div>
             <div><dt>Next</dt><dd>Damage state could drive material wear as well as geometry, in one pass.</dd></div>
           </dl>
-          <img class="rd__shot" src="assets/img/breakdown/morpher-destruction.webp" alt="The vehicle in vertex colours showing the mask separation that drives panel detachment" width="1025" height="548" loading="lazy">
+          <div class="rd__shot" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--dark)">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/ngHJbWV--YM?autoplay=1&mute=1&rel=0&modestbranding=1" title="Modular destruction without physics debris" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
         </div>
       </div>
       <p><a class="btn btn--sm" href="projects/rubber.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
@@ -218,42 +262,6 @@
 <img class="rd__shot" src="assets/img/breakdown/world-machine-node-graph.webp" alt="Three World Machine device graphs side by side: erosion, macro shape and detail passes" width="1100" height="537" loading="lazy">
       <p><a class="btn btn--sm" href="projects/environment-art.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
-<article class="rd reveal" id="rd-ps1-budget">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Designing to 2 MB of RAM and 1 MB of VRAM</h3>
-        <span class="rd__tools">Unity · SplashEdit · PSXSplash · Lua · original PS1 hardware</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>A fishing game on real 1994 hardware: 33 MHz, 2 MB system RAM, 1 MB VRAM. The toolchain compiles, packs VRAM and builds the disc image. What no toolchain decides for you is what fits.</dd></div>
-          <div><dt>What I did</dt><dd>Budgeted every scene to the hardware up front, choosing what each scene could afford rather than optimising after the fact, and treated the constraints as design input.</dd></div>
-          <div><dt>Result</dt><dd>A stable 30 fps on original hardware, shipped as a genuine PS1-compatible disc image.</dd></div>
-          <div><dt>Next</dt><dd>A per-scene VRAM ledger checked into the repo so the budget is visible before art lands.</dd></div>
-        </dl>
-      </div>
-      
-<p class="rd__none">Screenshot withheld &mdash; the budget breakdown is available in the case study or on request.</p>
-      <p><a class="btn btn--sm" href="projects/lastmeal.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-<article class="rd reveal" id="rd-world-streaming">
-      <div class="rd__head">
-        <span class="label label--accent">R&amp;D</span>
-        <h3>Large-scale world streaming on a proprietary engine</h3>
-        <span class="rd__tools">Eugen Systems in-house engine · World Machine · modular kits</span>
-      </div>
-      <div class="rd__body">
-        <dl>
-          <div><dt>Problem</dt><dd>Maps are built to real-world scale and must read like satellite imagery while streaming continuously, holding up from a whole city block down to a single street.</dd></div>
-          <div><dt>What I did</dt><dd>Owned a complete production map end to end: layout, terrain, environment data, final optimisation. Assembled and maintained four modular environment kits, each covering a distinct region and enforcing consistent real-world scale across the whole map.</dd></div>
-          <div><dt>Result</dt><dd>Map weight reduced and visual problems from large-scale QA pass fixed, while the world keeps loading around the player.</dd></div>
-          <div><dt>Next</dt><dd>Streaming cost visualised per sector would make the trade-offs reviewable with design.</dd></div>
-        </dl>
-      </div>
-      
-<img class="rd__shot" src="assets/img/breakdown/world-streaming-sectors.webp" alt="Aerial view of a lake and forest crossing in a large-scale streamed world" width="1100" height="618" loading="lazy">
-      <p><a class="btn btn--sm" href="projects/warno.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
-    </article>
 <article class="rd reveal" id="rd-cad-repair">
       <div class="rd__head">
         <span class="label label--accent">R&amp;D</span>
@@ -272,6 +280,7 @@
 <img class="rd__shot" src="assets/img/breakdown/cad-repair-before-after.webp" alt="Real-time architectural visualisation of a timber-clad house with garden and terraces" width="1100" height="571" loading="lazy">
       <p><a class="btn btn--sm" href="projects/architectural-visualisation.html">Read the case study <span class="arw" aria-hidden="true">&rarr;</span></a></p>
     </article>
+        </div>
 
 </div>
     </div>

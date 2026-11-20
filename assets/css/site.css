@@ -1184,7 +1184,8 @@ figcaption {
 /* =============================================================================
    13. R&D CARDS & PIPELINE FLOW
    ========================================================================== */
-.rd-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.rd-grid { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; }
+.rd-col { display: grid; gap: 22px; align-content: start; }
 /* DA .card + the 5px coloured top edge */
 .rd {
   display: flex;
